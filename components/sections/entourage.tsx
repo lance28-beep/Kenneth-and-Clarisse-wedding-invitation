@@ -125,20 +125,29 @@ export function Entourage() {
   const SectionTitle = ({ 
     children,
     align = "center",
-    className = ""
+    className = "",
+    subLabel
   }: { 
     children: React.ReactNode
     align?: "left" | "center" | "right"
     className?: string
+    subLabel?: string
   }) => {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-       <h3
-         className={`relative ${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg font-extrabold uppercase text-[#111814] mb-2 sm:mb-2.5 md:mb-3 tracking-[0.14em] sm:tracking-[0.18em] ${textAlign} ${className} transition-all duration-300 whitespace-nowrap`}
-       >
-        {children}
-      </h3>
+      <div className={`flex flex-col ${textAlign} ${className}`}>
+        <h3
+          className={`relative ${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg font-extrabold uppercase text-[#111814] mb-1 sm:mb-1.5 md:mb-2 tracking-[0.14em] sm:tracking-[0.18em] ${textAlign} transition-all duration-300 whitespace-nowrap`}
+        >
+          {children}
+        </h3>
+        {subLabel && (
+          <p className={`${cormorant.className} text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-light italic text-[#556457] tracking-wide ${textAlign} transition-all duration-300`}>
+            {subLabel}
+          </p>
+        )}
+      </div>
     )
   }
 
@@ -185,18 +194,20 @@ export function Entourage() {
     leftTitle, 
     rightTitle,
     singleTitle,
-    centerContent = false 
+    centerContent = false,
+    subLabel
   }: { 
     children: React.ReactNode
     leftTitle?: string
     rightTitle?: string
     singleTitle?: string
     centerContent?: boolean
+    subLabel?: string
   }) => {
     if (singleTitle) {
       return (
         <div className="mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-          <SectionTitle>{singleTitle}</SectionTitle>
+          <SectionTitle subLabel={subLabel}>{singleTitle}</SectionTitle>
           <div className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-2 md:gap-x-3 gap-y-1 sm:gap-y-1.5 md:gap-y-2 ${centerContent ? 'max-w-2xl mx-auto' : ''}`}>
             {children}
           </div>
@@ -587,7 +598,16 @@ export function Entourage() {
                         </div>
                       </div>
                     )}
-                    <TwoColumnLayout singleTitle={category} centerContent={true}>
+                    <TwoColumnLayout 
+                      singleTitle={category} 
+                      centerContent={true}
+                      subLabel={
+                        category === "Candle Sponsors" ? "To light our path" :
+                        category === "Cord Sponsors" ? "To bind us together" :
+                        category === "Veil Sponsors" ? "To clothe us as one" :
+                        undefined
+                      }
+                    >
                       {(() => {
                         const SINGLE_COLUMN_SECTIONS = new Set([
                           "Best Man",
