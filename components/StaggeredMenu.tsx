@@ -67,6 +67,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
   const busyRef = useRef(false);
+  const savedScrollYRef = useRef<number>(0);
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
 
@@ -262,6 +263,27 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     }
   }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
 
+  // Prevent body scroll when menu is open
+  React.useEffect(() => {
+    if (typeof document !== 'undefined') {
+      if (open) {
+        // Save current scroll position
+        savedScrollYRef.current = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollYRef.current}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+      } else {
+        // Restore body styles
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        // Note: We don't restore scroll position here because handleItemClick will handle scrolling to the target section
+      }
+    }
+  }, [open]);
+
   const animateText = useCallback((opening: boolean) => {
     const inner = textInnerRef.current;
     if (!inner) return;
@@ -313,28 +335,76 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   const handleItemClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
-      // If it's an in-page anchor, smooth scroll to the element
+      e.preventDefault();
+      
+      // If it's an in-page anchor, prepare to scroll after menu closes
       if (link && link.startsWith('#')) {
-        e.preventDefault();
         const targetId = link.slice(1);
-        const el = typeof document !== 'undefined' ? document.getElementById(targetId) : null;
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Optionally update the URL hash without jumping
-          if (typeof history !== 'undefined') {
-            history.replaceState(null, '', link);
+        
+        // Close the menu first
+        if (openRef.current) {
+          openRef.current = false;
+          setOpen(false);
+          onMenuClose?.();
+          playClose();
+          animateColor(false);
+          animateText(false);
+          
+          // Wait for menu close animation to complete and body scroll to be restored
+          // The close animation duration is 0.32s, wait a bit longer to ensure body styles are cleared
+          setTimeout(() => {
+            // Restore scroll position first (from when menu opened)
+            window.scrollTo(0, savedScrollYRef.current);
+            
+            // Then scroll to target element
+            requestAnimationFrame(() => {
+              const el = typeof document !== 'undefined' ? document.getElementById(targetId) : null;
+              if (el) {
+                // Calculate offset for fixed navbar if needed
+                const navbarHeight = 0; // Adjust if navbar has fixed height
+                const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - navbarHeight;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+                
+                // Update the URL hash without jumping
+                if (typeof history !== 'undefined') {
+                  history.replaceState(null, '', link);
+                }
+              }
+            });
+          }, 400); // Wait for close animation + body scroll restoration
+        } else {
+          // Menu is already closed, scroll immediately
+          const el = typeof document !== 'undefined' ? document.getElementById(targetId) : null;
+          if (el) {
+            const navbarHeight = 0;
+            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navbarHeight;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            
+            if (typeof history !== 'undefined') {
+              history.replaceState(null, '', link);
+            }
           }
         }
-      }
-
-      // Close the menu after any click
-      if (openRef.current) {
-        openRef.current = false;
-        setOpen(false);
-        onMenuClose?.();
-        playClose();
-        animateColor(false);
-        animateText(false);
+      } else {
+        // External link or non-anchor - just close menu
+        if (openRef.current) {
+          openRef.current = false;
+          setOpen(false);
+          onMenuClose?.();
+          playClose();
+          animateColor(false);
+          animateText(false);
+        }
       }
     },
     [onMenuClose, playClose, animateColor, animateText]

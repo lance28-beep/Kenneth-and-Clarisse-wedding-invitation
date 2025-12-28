@@ -7,15 +7,16 @@ import StaggeredMenu from "./StaggeredMenu"
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#countdown", label: "Countdown" },
+  { href: "#narrative", label: "Our Story" },
   { href: "#gallery", label: "Gallery" },
   { href: "#messages", label: "Messages" },
   { href: "#details", label: "Details" },
   { href: "#entourage", label: "Entourage" },
   { href: "#sponsors", label: "Sponsors" },
+  { href: "#celebration", label: "Celebration" },
   { href: "#guest-list", label: "RSVP" },
-  { href: "#registry", label: "Registry" },
   { href: "#faq", label: "FAQ" },
+  { href: "#snap-share", label: "Snap & Share" },
 ]
 
 export function Navbar() {
