@@ -390,12 +390,12 @@ export function GuestList() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle paper texture effect */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
         }} />
         {/* Soft accents */}
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#91729E]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#91729E]/5 via-transparent to-transparent" />
       </div>
 
       {/* Header */}
@@ -403,7 +403,7 @@ export function GuestList() {
         <div className="space-y-3 sm:space-y-4 md:space-y-5">
           {/* Small label - elegant uppercase */}
           <p
-            className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] font-light`}
+            className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#91729E] font-light`}
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
           >
             Confirm Your Attendance
@@ -411,7 +411,7 @@ export function GuestList() {
 
           {/* Main title - elegant script */}
           <h2
-            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e]"
+            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E]"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -423,16 +423,16 @@ export function GuestList() {
 
         {/* Elegant divider */}
         <div className="flex items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
-          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/50 border border-[#4a5d4e]/40" />
-          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/50 border border-[#91729E]/40" />
+          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
         </div>
       </div>
 
       {/* RSVP Information */}
       <div className="relative z-10 max-w-2xl mx-auto px-2 sm:px-4 md:px-6 mb-6 sm:mb-8 md:mb-10">
         <div 
-          className={`${cormorant.className} space-y-3 text-[#4a5d4e] text-sm sm:text-base font-light text-center`}
+          className={`${cormorant.className} space-y-3 text-[#91729E] text-sm sm:text-base font-light text-center`}
           style={{ 
             letterSpacing: "0.02em",
             textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -444,7 +444,7 @@ export function GuestList() {
             <div className="flex items-center justify-center gap-2 sm:gap-3">
               <a
                 href="tel:+639662731251"
-                className="flex items-center justify-center p-1.5 sm:p-2 bg-[#4a5d4e] text-white rounded-lg hover:bg-[#3d4d3f] transition-colors shadow-sm hover:shadow-md"
+                className="flex items-center justify-center p-1.5 sm:p-2 bg-[#91729E] text-white rounded-lg hover:bg-[#7a5d85] transition-colors shadow-sm hover:shadow-md"
                 aria-label="Call Macy Reyes"
               >
                 <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -454,7 +454,7 @@ export function GuestList() {
             <div className="flex items-center justify-center gap-2 sm:gap-3">
               <a
                 href="tel:+639957640990"
-                className="flex items-center justify-center p-1.5 sm:p-2 bg-[#4a5d4e] text-white rounded-lg hover:bg-[#3d4d3f] transition-colors shadow-sm hover:shadow-md"
+                className="flex items-center justify-center p-1.5 sm:p-2 bg-[#91729E] text-white rounded-lg hover:bg-[#7a5d85] transition-colors shadow-sm hover:shadow-md"
                 aria-label="Call Kenneth Jose"
               >
                 <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -471,35 +471,35 @@ export function GuestList() {
         <div className="relative bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 shadow-[0_16px_60px_rgba(0,0,0,0.08)] overflow-visible">
           {/* Paper texture overlay */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{
-            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                            repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                            repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
           }} />
           
           {/* Card content */}
           <div className="relative p-2.5 sm:p-4 md:p-5 lg:p-6 z-10 overflow-visible">
             <div className="relative z-10 space-y-3 sm:space-y-4 overflow-visible">
               <div className="flex items-center gap-2 sm:gap-3">
-                <div className="bg-[#4a5d4e] p-1.5 sm:p-2 rounded-lg shadow-md">
+                <div className="bg-[#91729E] p-1.5 sm:p-2 rounded-lg shadow-md">
                   <Search className="h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-white" />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm md:text-base font-semibold text-[#4a5d4e] font-sans mb-0.5 sm:mb-1">
+                  <label className="block text-xs sm:text-sm md:text-base font-semibold text-[#91729E] font-sans mb-0.5 sm:mb-1">
                     Find Your Name
                   </label>
-                  <p className="text-[10px] sm:text-xs text-[#4a5d4e]/70 font-sans">
+                  <p className="text-[10px] sm:text-xs text-[#91729E]/70 font-sans">
                     Type as you search to see instant results
                   </p>
                 </div>
               </div>
               <div ref={searchRef} className="relative z-[100]">
                 <div className="relative">
-                  <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#4a5d4e]/50 pointer-events-none transition-colors duration-200" />
+                  <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#91729E]/50 pointer-events-none transition-colors duration-200" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Type your name..."
-                    className="w-full pl-8 sm:pl-10 pr-2.5 sm:pr-3 py-2 sm:py-2.5 md:py-3 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm font-sans text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 hover:border-[#4a5d4e]/70 focus:ring-2 focus:ring-[#4a5d4e]/20 bg-white shadow-sm focus:shadow-md"
+                    className="w-full pl-8 sm:pl-10 pr-2.5 sm:pr-3 py-2 sm:py-2.5 md:py-3 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm font-sans text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 hover:border-[#91729E]/70 focus:ring-2 focus:ring-[#91729E]/20 bg-white shadow-sm focus:shadow-md"
                   />
                 </div>
                 {/* Autocomplete dropdown */}
@@ -517,15 +517,15 @@ export function GuestList() {
                       <button
                         key={index}
                         onClick={() => handleSearchSelect(guest)}
-                        className="w-full px-2.5 sm:px-3 py-2 sm:py-2.5 text-left hover:bg-[#F4F4F4]/40 active:bg-[#4a5d4e]/20 transition-all duration-200 flex items-center gap-2 sm:gap-3 border-b border-[#D0D0D0]/40 last:border-b-0 group"
+                        className="w-full px-2.5 sm:px-3 py-2 sm:py-2.5 text-left hover:bg-[#F4F4F4]/40 active:bg-[#91729E]/20 transition-all duration-200 flex items-center gap-2 sm:gap-3 border-b border-[#D0D0D0]/40 last:border-b-0 group"
                       >
                         <div className="relative flex-shrink-0">
-                          <div className="bg-[#4a5d4e] p-1 sm:p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all duration-300">
+                          <div className="bg-[#91729E] p-1 sm:p-1.5 rounded-full shadow-sm group-hover:shadow-md transition-all duration-300">
                             <User className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white" />
                           </div>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-xs sm:text-sm text-[#243127] group-hover:text-[#4a5d4e] transition-colors duration-200 truncate">
+                          <div className="font-semibold text-xs sm:text-sm text-[#243127] group-hover:text-[#91729E] transition-colors duration-200 truncate">
                             {guest.Name}
                           </div>
                           {guest.Email && guest.Email !== "Pending" && (
@@ -534,7 +534,7 @@ export function GuestList() {
                             </div>
                           )}
                         </div>
-                        <div className="text-[#909E8D]/70 group-hover:text-[#4a5d4e] group-hover:translate-x-1 transition-all duration-200 flex-shrink-0">
+                        <div className="text-[#909E8D]/70 group-hover:text-[#91729E] group-hover:translate-x-1 transition-all duration-200 flex-shrink-0">
                           <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
@@ -555,7 +555,7 @@ export function GuestList() {
                   >
                     <div className="p-2.5 sm:p-3 md:p-4">
                       <div className="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
-                        <div className="bg-[#4a5d4e] p-1.5 sm:p-2 rounded-lg flex-shrink-0 shadow-sm">
+                        <div className="bg-[#91729E] p-1.5 sm:p-2 rounded-lg flex-shrink-0 shadow-sm">
                           <UserPlus className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                         </div>
                         <div className="flex-1">
@@ -570,7 +570,7 @@ export function GuestList() {
                           setRequestFormData({ ...requestFormData, Name: searchQuery })
                           setShowRequestModal(true)
                         }}
-                        className="w-full !bg-[#4a5d4e] hover:!bg-[#4a5d4e]/80 text-white py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center"
+                        className="w-full !bg-[#91729E] hover:!bg-[#91729E]/80 text-white py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center"
                       >
                         <UserPlus className="h-3 w-3 mr-1.5 sm:mr-2 inline" />
                         Request to Join
@@ -589,7 +589,7 @@ export function GuestList() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-1 sm:p-2 md:p-4 bg-black/50 backdrop-blur-sm animate-in fade-in">
             <div className="relative w-full max-w-md sm:max-w-lg mx-1 sm:mx-2 md:mx-4 bg-white rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#D0D0D0]/80 overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
               {/* Modal Header */}
-              <div className="relative bg-[#4a5d4e] p-3 sm:p-4 md:p-5 lg:p-6 flex-shrink-0">
+              <div className="relative bg-[#91729E] p-3 sm:p-4 md:p-5 lg:p-6 flex-shrink-0">
                 <div className="relative flex items-start justify-between gap-1.5 sm:gap-2">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 mb-1 sm:mb-1.5 md:mb-2 lg:mb-3">
@@ -623,8 +623,8 @@ export function GuestList() {
                 {hasResponded ? (
                   // Thank you message for guests who already responded
                   <div className="text-center py-3 sm:py-4 md:py-6">
-                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#4a5d4e]/20 rounded-full mb-2 sm:mb-3 md:mb-4">
-                      <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-[#4a5d4e]" />
+                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#91729E]/20 rounded-full mb-2 sm:mb-3 md:mb-4">
+                      <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-[#91729E]" />
                     </div>
                     <h4 className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#243127] mb-1.5 sm:mb-2 md:mb-3`} style={{ fontWeight: 300 }}>
                       Thank You for Responding!
@@ -671,7 +671,7 @@ export function GuestList() {
                     </div>
                     <button
                       onClick={handleCloseModal}
-                      className={`${cormorant.className} mt-3 sm:mt-4 md:mt-6 !bg-[#4a5d4e] hover:!bg-[#4a5d4e]/80 text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-lg text-xs sm:text-sm md:text-base font-semibold transition-all duration-300`}
+                      className={`${cormorant.className} mt-3 sm:mt-4 md:mt-6 !bg-[#91729E] hover:!bg-[#91729E]/80 text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-lg text-xs sm:text-sm md:text-base font-semibold transition-all duration-300`}
                       style={{ fontWeight: 300 }}
                     >
                       Close
@@ -701,7 +701,7 @@ export function GuestList() {
                           className={`relative p-2 sm:p-2.5 md:p-3 lg:p-4 rounded-lg border-2 transition-all duration-300 ${
                             formData.RSVP === "Yes"
                               ? "border-green-600 bg-green-50 shadow-md scale-105"
-                              : "border-[#D0D0D0]/60 bg-white hover:border-[#4a5d4e]/70 hover:shadow-sm"
+                              : "border-[#D0D0D0]/60 bg-white hover:border-[#91729E]/70 hover:shadow-sm"
                           }`}
                         >
                           <div className="flex items-center justify-center gap-1.5 sm:gap-2">
@@ -726,7 +726,7 @@ export function GuestList() {
                           className={`relative p-2 sm:p-2.5 md:p-3 lg:p-4 rounded-lg border-2 transition-all duration-300 ${
                             formData.RSVP === "No"
                               ? "border-red-500 bg-red-50 shadow-md scale-105"
-                              : "border-[#D0D0D0]/60 bg-white hover:border-[#4a5d4e]/70 hover:shadow-sm"
+                              : "border-[#D0D0D0]/60 bg-white hover:border-[#91729E]/70 hover:shadow-sm"
                           }`}
                         >
                           <div className="flex items-center justify-center gap-1.5 sm:gap-2">
@@ -761,7 +761,7 @@ export function GuestList() {
                         {companions.map((companion, index) => (
                             <div key={index} className="bg-[#F4F4F4]/40 rounded-lg p-2 sm:p-2.5 md:p-3 border border-[#D0D0D0]/40">
                             <div className="flex items-center gap-1.5 mb-1.5 sm:mb-2">
-                              <User className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#4a5d4e]" />
+                              <User className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#91729E]" />
                               <span className={`${cormorant.className} text-xs sm:text-sm font-semibold text-[#243127]`} style={{ fontWeight: 300 }}>
                                 Guest {index + 2} Name
                               </span>
@@ -775,7 +775,7 @@ export function GuestList() {
                                 setCompanions(newCompanions)
                               }}
                               placeholder={`Name of guest ${index + 2}`}
-                              className={`${cormorant.className} w-full px-2 sm:px-2.5 py-1.5 sm:py-2 border border-[#D0D0D0]/50 focus:border-[#4a5d4e] rounded text-xs sm:text-sm text-[#243127] placeholder:text-[#909E8D]/60 transition-all duration-300 focus:ring-1 focus:ring-[#4a5d4e]/20 bg-white`}
+                              className={`${cormorant.className} w-full px-2 sm:px-2.5 py-1.5 sm:py-2 border border-[#D0D0D0]/50 focus:border-[#91729E] rounded text-xs sm:text-sm text-[#243127] placeholder:text-[#909E8D]/60 transition-all duration-300 focus:ring-1 focus:ring-[#91729E]/20 bg-white`}
                               style={{ fontWeight: 300 }}
                             />
                           </div>
@@ -796,7 +796,7 @@ export function GuestList() {
                         onChange={handleFormChange}
                         placeholder="Share your excitement..."
                         rows={3}
-                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 resize-none bg-white`}
+                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 resize-none bg-white`}
                       style={{ fontWeight: 300 }}
                       />
                     </div>
@@ -814,7 +814,7 @@ export function GuestList() {
                         value={formData.Email}
                         onChange={handleFormChange}
                         placeholder="your.email@example.com"
-                        className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 bg-white`}
+                        className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 bg-white`}
                         style={{ fontWeight: 300 }}
                       />
                     </div>
@@ -824,7 +824,7 @@ export function GuestList() {
                       <button
                         type="submit"
                         disabled={isLoading}
-                        className={`${cormorant.className} w-full !bg-[#4a5d4e] hover:!bg-[#4a5d4e]/80 text-white py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base font-semibold shadow-md transition-all duration-300 hover:shadow-lg disabled:opacity-70 flex items-center justify-center gap-1.5 sm:gap-2`}
+                        className={`${cormorant.className} w-full !bg-[#91729E] hover:!bg-[#91729E]/80 text-white py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base font-semibold shadow-md transition-all duration-300 hover:shadow-lg disabled:opacity-70 flex items-center justify-center gap-1.5 sm:gap-2`}
                         style={{ fontWeight: 300 }}
                       >
                         {isLoading ? (
@@ -846,7 +846,7 @@ export function GuestList() {
 
               {/* Enhanced Success Overlay */}
               {success && (
-                <div className="absolute inset-0 bg-[#4a5d4e]/98 backdrop-blur-md flex items-center justify-center z-50 animate-in fade-in duration-300 p-2 sm:p-3 md:p-4">
+                <div className="absolute inset-0 bg-[#91729E]/98 backdrop-blur-md flex items-center justify-center z-50 animate-in fade-in duration-300 p-2 sm:p-3 md:p-4">
                   <div className="text-center p-3 sm:p-4 md:p-5 lg:p-6 max-w-sm mx-auto">
                     {/* Enhanced Icon Circle */}
                     <div className="relative inline-flex items-center justify-center mb-3 sm:mb-4">
@@ -855,7 +855,7 @@ export function GuestList() {
                       <div className="absolute inset-0 rounded-full border-2 border-white/30" />
                       {/* Icon container */}
                       <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-xl">
-                        <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10 text-[#4a5d4e]" strokeWidth={2.5} />
+                        <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10 text-[#91729E]" strokeWidth={2.5} />
                       </div>
                     </div>
                     
@@ -918,7 +918,7 @@ export function GuestList() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-1 sm:p-2 md:p-4 bg-black/50 backdrop-blur-sm animate-in fade-in">
             <div className="relative w-full max-w-md sm:max-w-lg mx-1 sm:mx-2 md:mx-4 bg-white rounded-xl sm:rounded-2xl shadow-2xl border-2 border-[#D0D0D0]/80 overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
               {/* Modal Header with Gradient */}
-              <div className="relative bg-[#4a5d4e] p-3 sm:p-4 md:p-5 lg:p-6 flex-shrink-0">
+              <div className="relative bg-[#91729E] p-3 sm:p-4 md:p-5 lg:p-6 flex-shrink-0">
                 <div className="relative flex items-start justify-between gap-1.5 sm:gap-2">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 mb-1 sm:mb-1.5 md:mb-2 lg:mb-3">
@@ -968,7 +968,7 @@ export function GuestList() {
                       onChange={(e) => setRequestFormData({ ...requestFormData, Name: e.target.value })}
                       required
                       placeholder="Enter your full name"
-                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 bg-white`}
+                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 bg-white`}
                       style={{ fontWeight: 300 }}
                     />
                   </div>
@@ -986,7 +986,7 @@ export function GuestList() {
                       value={requestFormData.Email}
                       onChange={(e) => setRequestFormData({ ...requestFormData, Email: e.target.value })}
                       placeholder="your.email@example.com"
-                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 bg-white`}
+                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 bg-white`}
                       style={{ fontWeight: 300 }}
                     />
                   </div>
@@ -1004,7 +1004,7 @@ export function GuestList() {
                       value={requestFormData.Phone}
                       onChange={(e) => setRequestFormData({ ...requestFormData, Phone: e.target.value })}
                       placeholder="+1 (555) 123-4567"
-                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 bg-white`}
+                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 bg-white`}
                       style={{ fontWeight: 300 }}
                     />
                   </div>
@@ -1023,7 +1023,7 @@ export function GuestList() {
                       min="1"
                       required
                       placeholder="How many guests?"
-                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 bg-white`}
+                      className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 bg-white`}
                       style={{ fontWeight: 300 }}
                     />
                   </div>
@@ -1041,7 +1041,7 @@ export function GuestList() {
                       onChange={(e) => setRequestFormData({ ...requestFormData, Message: e.target.value })}
                       placeholder="Share why you'd like to join..."
                       rows={3}
-                        className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#4a5d4e] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#4a5d4e]/20 resize-none bg-white`}
+                        className={`${cormorant.className} w-full px-2.5 sm:px-3 py-1.5 sm:py-2 border-2 border-[#D0D0D0]/60 focus:border-[#91729E] rounded-lg text-xs sm:text-sm md:text-base text-[#243127] placeholder:text-[#909E8D]/70 transition-all duration-300 focus:ring-2 focus:ring-[#91729E]/20 resize-none bg-white`}
                       style={{ fontWeight: 300 }}
                     />
                   </div>
@@ -1051,7 +1051,7 @@ export function GuestList() {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className={`${cormorant.className} w-full !bg-[#4a5d4e] hover:!bg-[#4a5d4e]/80 text-white py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base font-semibold shadow-md transition-all duration-300 hover:shadow-lg disabled:opacity-70 flex items-center justify-center gap-1.5 sm:gap-2`}
+                      className={`${cormorant.className} w-full !bg-[#91729E] hover:!bg-[#91729E]/80 text-white py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base font-semibold shadow-md transition-all duration-300 hover:shadow-lg disabled:opacity-70 flex items-center justify-center gap-1.5 sm:gap-2`}
                       style={{ fontWeight: 300 }}
                     >
                       {isLoading ? (
@@ -1072,7 +1072,7 @@ export function GuestList() {
 
               {/* Enhanced Success Overlay */}
               {requestSuccess && (
-                <div className="absolute inset-0 bg-[#4a5d4e]/98 backdrop-blur-md flex items-center justify-center z-50 animate-in fade-in duration-300 p-2 sm:p-3 md:p-4">
+                <div className="absolute inset-0 bg-[#91729E]/98 backdrop-blur-md flex items-center justify-center z-50 animate-in fade-in duration-300 p-2 sm:p-3 md:p-4">
                   <div className="text-center p-3 sm:p-4 md:p-5 lg:p-6 max-w-sm mx-auto">
                     {/* Enhanced Icon Circle */}
                     <div className="relative inline-flex items-center justify-center mb-3 sm:mb-4">
@@ -1081,7 +1081,7 @@ export function GuestList() {
                       <div className="absolute inset-0 rounded-full border-2 border-white/30" />
                       {/* Icon container */}
                       <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-xl">
-                        <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10 text-[#4a5d4e]" strokeWidth={2.5} />
+                        <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10 text-[#91729E]" strokeWidth={2.5} />
                       </div>
                     </div>
                     

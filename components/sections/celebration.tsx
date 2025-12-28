@@ -282,7 +282,7 @@ export function Celebration() {
         >
           {/* Main Label */}
           <h2
-            className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#4a5d4e] max-w-3xl mx-auto leading-tight"
+            className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-[#91729E] max-w-3xl mx-auto leading-tight"
             style={{
               textShadow: "0 3px 10px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2)",
               letterSpacing: "0.02em",
@@ -293,7 +293,7 @@ export function Celebration() {
           
           {/* Sub Label */}
           <p
-            className="text-[#4a5d4e] text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light italic"
+            className="text-[#91729E] text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light italic"
             style={{
               fontFamily: '"Cormorant Garamond", serif',
               fontWeight: 300,

@@ -64,19 +64,19 @@ export function Details() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle paper texture effect */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
         }} />
         {/* Soft sage green accents */}
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#91729E]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#91729E]/5 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 
-            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e] mb-2"
+            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E] mb-2"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -90,15 +90,15 @@ export function Details() {
         <div className="mb-10 sm:mb-12 md:mb-16">
           <div className="text-center mb-6 sm:mb-8">
             <h3 
-              className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 text-center font-light`}
+              className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#91729E] mb-3 sm:mb-4 text-center font-light`}
               style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
             >
               Timeline
             </h3>
             {/* Date and Time below Timeline label */}
-            <div className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#4a5d4e]/90 font-light`}>
+            <div className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#91729E]/90 font-light`}>
               <p className="mb-1">{siteConfig.ceremony.date}</p>
-              <p className="text-xs sm:text-sm text-[#4a5d4e]/80">
+              <p className="text-xs sm:text-sm text-[#91729E]/80">
                 {siteConfig.ceremony.day} • {siteConfig.ceremony.time}
               </p>
             </div>
@@ -107,18 +107,18 @@ export function Details() {
           <div className="relative px-2 sm:px-4 md:px-6">
             {/* Enhanced horizontal connecting line with dots - desktop */}
             <div className="hidden sm:flex absolute top-20 md:top-24 left-4 right-4 items-center z-0">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/25 to-[#4a5d4e]/30" />
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#91729E]/25 to-[#91729E]/30" />
               {timelineEvents.slice(1).map((_, idx) => (
                 <React.Fragment key={idx}>
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#4a5d4e]/30 mx-1" />
-                  <div className="flex-1 h-px bg-gradient-to-r from-[#4a5d4e]/30 via-[#4a5d4e]/25 to-[#4a5d4e]/30" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#91729E]/30 mx-1" />
+                  <div className="flex-1 h-px bg-gradient-to-r from-[#91729E]/30 via-[#91729E]/25 to-[#91729E]/30" />
                 </React.Fragment>
               ))}
             </div>
             
             {/* Mobile connecting lines - between rows */}
-            <div className="sm:hidden absolute top-20 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/20 to-transparent" />
-            <div className="sm:hidden absolute top-[15.5rem] left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/20 to-transparent" />
+            <div className="sm:hidden absolute top-20 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#91729E]/20 to-transparent" />
+            <div className="sm:hidden absolute top-[15.5rem] left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#91729E]/20 to-transparent" />
             
             <div className="grid grid-cols-3 sm:flex sm:justify-center gap-4 sm:gap-4 md:gap-6 lg:gap-8 relative items-start">
               {timelineEvents.map((event) => {
@@ -129,7 +129,7 @@ export function Details() {
                   >
                     {/* Image with enhanced styling */}
                     <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#4a5d4e]/5 to-transparent rounded-full blur-sm group-hover:blur-md transition-all duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#91729E]/5 to-transparent rounded-full blur-sm group-hover:blur-md transition-all duration-300" />
                       <Image
                         src={event.image}
                         alt={event.label}
@@ -140,7 +140,7 @@ export function Details() {
                     </div>
                     {/* Label below image */}
                     <p 
-                      className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#4a5d4e] font-light text-center mt-1`}
+                      className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#91729E] font-light text-center mt-1`}
                       style={{ 
                         letterSpacing: "0.02em",
                         textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -158,7 +158,7 @@ export function Details() {
         {/* What to Wear Section */}
         <div className="mb-10 sm:mb-12">
           <h3 
-            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4 text-center"
+            className="style-script-regular text-2xl sm:text-3xl text-[#91729E] mb-4 text-center"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -167,7 +167,7 @@ export function Details() {
             What to wear
           </h3>
           <div 
-            className={`${cormorant.className} text-center space-y-4 text-[#4a5d4e] font-light`}
+            className={`${cormorant.className} text-center space-y-4 text-[#91729E] font-light`}
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -181,7 +181,7 @@ export function Details() {
               {attireColors.map((color, index) => (
                 <div
                   key={index}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#4a5d4e]/20"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#91729E]/20"
                   style={{ backgroundColor: color }}
                 />
               ))}
@@ -196,7 +196,7 @@ export function Details() {
         {/* A Note on Gifts Section */}
         <div className="mb-10 sm:mb-12 text-center">
           <h3 
-            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4"
+            className="style-script-regular text-2xl sm:text-3xl text-[#91729E] mb-4"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -205,7 +205,7 @@ export function Details() {
             A note on gifts
           </h3>
           <div 
-            className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base space-y-2 max-w-2xl mx-auto font-light leading-relaxed`}
+            className={`${cormorant.className} text-[#91729E]/85 text-sm sm:text-base space-y-2 max-w-2xl mx-auto font-light leading-relaxed`}
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -223,7 +223,7 @@ export function Details() {
         {/* Unplugged Ceremony Section */}
         <div className="mb-10 sm:mb-12 text-center">
           <h3 
-            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4"
+            className="style-script-regular text-2xl sm:text-3xl text-[#91729E] mb-4"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -232,7 +232,7 @@ export function Details() {
             Unplugged Ceremony
           </h3>
           <div 
-            className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base space-y-2 max-w-2xl mx-auto font-light leading-relaxed`}
+            className={`${cormorant.className} text-[#91729E]/85 text-sm sm:text-base space-y-2 max-w-2xl mx-auto font-light leading-relaxed`}
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -248,7 +248,7 @@ export function Details() {
         {/* How To Get There Section */}
         <div className="mb-8 text-center">
           <h3 
-            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4"
+            className="style-script-regular text-2xl sm:text-3xl text-[#91729E] mb-4"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -257,7 +257,7 @@ export function Details() {
             How To Get There?
           </h3>
           <div 
-            className={`${cormorant.className} text-[#4a5d4e] text-sm sm:text-base space-y-4 font-light`}
+            className={`${cormorant.className} text-[#91729E] text-sm sm:text-base space-y-4 font-light`}
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -271,25 +271,25 @@ export function Details() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-6 max-w-2xl mx-auto">
               {/* Ceremony QR Code */}
               <div className="flex flex-col items-center gap-4">
-                <div className="w-40 h-40 sm:w-44 sm:h-44 border-2 border-[#4a5d4e]/30 bg-white p-3 flex items-center justify-center shadow-sm rounded-sm">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 border-2 border-[#91729E]/30 bg-white p-3 flex items-center justify-center shadow-sm rounded-sm">
                   <QRCodeSVG
                     value={ceremonyMapsLink}
                     size={160}
                     level="H"
                     includeMargin={false}
-                    fgColor="#4a5d4e"
+                    fgColor="#91729E"
                     bgColor="#FFFFFF"
                   />
                 </div>
                 <div className="space-y-2 w-full">
                   <p 
-                    className={`${cormorant.className} text-sm font-semibold text-[#4a5d4e] uppercase tracking-wider`}
+                    className={`${cormorant.className} text-sm font-semibold text-[#91729E] uppercase tracking-wider`}
                     style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
                   >
                     CEREMONY
                   </p>
                   <div 
-                    className={`${cormorant.className} text-xs text-[#4a5d4e]/85 space-y-1 font-light`}
+                    className={`${cormorant.className} text-xs text-[#91729E]/85 space-y-1 font-light`}
                     style={{ 
                       letterSpacing: "0.02em",
                       textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -301,14 +301,14 @@ export function Details() {
                   <div className="mt-3 flex gap-2 w-full">
                     <button
                       onClick={() => openInMaps(ceremonyMapsLink)}
-                      className={`${cormorant.className} flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#4a5d4e] text-white rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                      className={`${cormorant.className} flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#91729E] text-white rounded-sm hover:bg-[#7a5d85] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                     >
                       <Navigation className="w-4 h-4" />
                       Open in Maps
                     </button>
                     <button
                       onClick={() => copyToClipboard(ceremonyLocation, "ceremony")}
-                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 border border-[#4a5d4e]/30 text-[#4a5d4e] rounded-sm hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 border border-[#91729E]/30 text-[#91729E] rounded-sm hover:bg-[#91729E]/5 hover:border-[#91729E]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                     >
                       {copiedItems.has("ceremony") ? (
                         <>
@@ -328,25 +328,25 @@ export function Details() {
 
               {/* Reception QR Code */}
               <div className="flex flex-col items-center gap-4">
-                <div className="w-40 h-40 sm:w-44 sm:h-44 border-2 border-[#4a5d4e]/30 bg-white p-3 flex items-center justify-center shadow-sm rounded-sm">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 border-2 border-[#91729E]/30 bg-white p-3 flex items-center justify-center shadow-sm rounded-sm">
                   <QRCodeSVG
                     value={receptionMapsLink}
                     size={160}
                     level="H"
                     includeMargin={false}
-                    fgColor="#4a5d4e"
+                    fgColor="#91729E"
                     bgColor="#FFFFFF"
                   />
                 </div>
                 <div className="space-y-2 w-full">
                   <p 
-                    className={`${cormorant.className} text-sm font-semibold text-[#4a5d4e] uppercase tracking-wider`}
+                    className={`${cormorant.className} text-sm font-semibold text-[#91729E] uppercase tracking-wider`}
                     style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
                   >
                     RECEPTION
                   </p>
                   <div 
-                    className={`${cormorant.className} text-xs text-[#4a5d4e]/85 space-y-1 font-light`}
+                    className={`${cormorant.className} text-xs text-[#91729E]/85 space-y-1 font-light`}
                     style={{ 
                       letterSpacing: "0.02em",
                       textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -358,14 +358,14 @@ export function Details() {
                   <div className="mt-3 flex gap-2 w-full">
                     <button
                       onClick={() => openInMaps(receptionMapsLink)}
-                      className={`${cormorant.className} flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#4a5d4e] text-white rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                      className={`${cormorant.className} flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#91729E] text-white rounded-sm hover:bg-[#7a5d85] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                     >
                       <Navigation className="w-4 h-4" />
                       Open in Maps
                     </button>
                     <button
                       onClick={() => copyToClipboard(receptionLocation, "reception")}
-                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 border border-[#4a5d4e]/30 text-[#4a5d4e] rounded-sm hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 border border-[#91729E]/30 text-[#91729E] rounded-sm hover:bg-[#91729E]/5 hover:border-[#91729E]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                     >
                       {copiedItems.has("reception") ? (
                         <>

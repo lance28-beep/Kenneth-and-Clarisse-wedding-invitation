@@ -26,12 +26,12 @@ export function Narrative() {
       {/* Background elements with sage green motif */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Vertical sage gradients to frame the story */}
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/8 via-[#4a5d4e]/5 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/8 via-[#4a5d4e]/5 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#91729E]/8 via-[#91729E]/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#91729E]/8 via-[#91729E]/5 to-transparent" />
         {/* Soft radial light in sage green */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(74,93,78,0.08),transparent_55%)] opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(145,114,158,0.08),transparent_55%)] opacity-60" />
         {/* Subtle diagonal wash */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#4a5d4e]/5 via-transparent to-[#4a5d4e]/3 mix-blend-soft-light" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#91729E]/5 via-transparent to-[#91729E]/3 mix-blend-soft-light" />
       </div>
 
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,13 +45,13 @@ export function Narrative() {
         >
           <div className="space-y-3 sm:space-y-4 md:space-y-5">
             <p
-              className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] font-light`}
+              className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#91729E] font-light`}
               style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
             >
               Our Love Story
             </p>
             <h2
-              className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e]"
+              className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E]"
               style={{ 
                 textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
                 letterSpacing: "0.02em"
@@ -60,7 +60,7 @@ export function Narrative() {
               From Friends to Forever
             </h2>
             <p
-              className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#4a5d4e]/80 italic font-light max-w-2xl mx-auto`}
+              className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#91729E]/80 italic font-light max-w-2xl mx-auto`}
               style={{ 
                 textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)",
                 letterSpacing: "0.02em"
@@ -71,16 +71,16 @@ export function Narrative() {
 
             {/* Decorative flourish */}
             <div className="flex items-center justify-center gap-3 pt-1">
-              <div className="w-8 md:w-12 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-transparent" />
+              <div className="w-8 md:w-12 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-transparent" />
               <motion.div
                 animate={{ scale: [1, 1.15, 1], rotate: [0, 8, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-[#4a5d4e]/60" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-[#91729E]/60" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
               </motion.div>
-              <div className="w-8 md:w-12 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-transparent" />
+              <div className="w-8 md:w-12 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-transparent" />
             </div>
           </div>
         </motion.div>
@@ -100,9 +100,9 @@ export function Narrative() {
           <div className="flex justify-center">
             <div className="relative">
               {/* Enhanced glow effect with sage green motif */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#4a5d4e]/15 via-[#4a5d4e]/10 to-[#4a5d4e]/12 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#4a5d4e]/12 via-transparent to-[#4a5d4e]/10 rounded-full blur-2xl -z-10 w-full h-full max-w-sm" />
-              <div className="absolute inset-0 bg-gradient-to-bl from-[#4a5d4e]/10 via-transparent to-[#4a5d4e]/8 rounded-full blur-xl -z-10 w-full h-full max-w-sm" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#91729E]/15 via-[#91729E]/10 to-[#91729E]/12 rounded-full blur-3xl -z-10 w-full h-full max-w-sm animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#91729E]/12 via-transparent to-[#91729E]/10 rounded-full blur-2xl -z-10 w-full h-full max-w-sm" />
+              <div className="absolute inset-0 bg-gradient-to-bl from-[#91729E]/10 via-transparent to-[#91729E]/8 rounded-full blur-xl -z-10 w-full h-full max-w-sm" />
 
               <Stack
                 randomRotation={true}
@@ -112,22 +112,22 @@ export function Narrative() {
                 cardsData={[
                   { id: 1, img: "/desktop-background/couple (2).jpeg" },
                   { id: 2, img: "/desktop-background/couple (3).jpeg" },
-                  { id: 3, img: "/desktop-background/couple (5).jpeg" },
-                  { id: 4, img: "/desktop-background/couple (6).jpeg" },
+                  { id: 3, img: "/desktop-background/couple (6).jpeg" },
+                  { id: 4, img: "/desktop-background/couple (5).jpeg" },
 
                 ]}
                 animationConfig={{ stiffness: 260, damping: 20 }}
               />
 
               <motion.p 
-                className={`${cormorant.className} text-center text-xs md:text-sm text-[#4a5d4e] mt-4 font-light tracking-wide`}
+                className={`${cormorant.className} text-center text-xs md:text-sm text-[#91729E] mt-4 font-light tracking-wide`}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1 }}
                 style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
               >
-                <span className="text-[#4a5d4e]/70">✨</span> Drag to explore our moments <span className="text-[#4a5d4e]/70">✨</span>
+                <span className="text-[#91729E]/70">✨</span> Drag to explore our moments <span className="text-[#91729E]/70">✨</span>
               </motion.p>
             </div>
           </div>
@@ -156,14 +156,14 @@ export function Narrative() {
               >
                 {/* First paragraph with drop cap */}
                 {index === 0 ? (
-                  <p className={`${cormorant.className} text-sm md:text-base lg:text-lg leading-relaxed text-[#4a5d4e] text-pretty font-light pl-3 md:pl-6`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}>
-                    <span className={`${cormorant.className} float-left text-3xl md:text-5xl lg:text-6xl font-bold text-[#4a5d4e] leading-none mr-2 mt-1`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.15)" }}>
+                  <p className={`${cormorant.className} text-sm md:text-base lg:text-lg leading-relaxed text-[#91729E] text-pretty font-light pl-3 md:pl-6`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}>
+                    <span className={`${cormorant.className} float-left text-3xl md:text-5xl lg:text-6xl font-bold text-[#91729E] leading-none mr-2 mt-1`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.2), 0 1px 4px rgba(0,0,0,0.15)" }}>
                       {paragraph.charAt(0)}
                     </span>
                     {paragraph.slice(1)}
                   </p>
                 ) : (
-                  <p className={`${cormorant.className} text-sm md:text-base lg:text-lg leading-relaxed text-[#4a5d4e] text-pretty font-light pl-3 md:pl-6`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}>
+                  <p className={`${cormorant.className} text-sm md:text-base lg:text-lg leading-relaxed text-[#91729E] text-pretty font-light pl-3 md:pl-6`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}>
                     {paragraph}
                   </p>
                 )}
@@ -181,7 +181,7 @@ export function Narrative() {
           >
             {/* Decorative divider with sage green motif */}
             <div className="flex items-center justify-center gap-4">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/30" />
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/30" />
               <motion.div
                 animate={{
                   rotate: [0, 360],
@@ -192,21 +192,21 @@ export function Narrative() {
                   ease: "linear",
                 }}
               >
-                <svg className="w-5 h-5 text-[#4a5d4e]/60" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#91729E]/60" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
                 </svg>
               </motion.div>
-              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/30" />
+              <div className="flex-1 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/30" />
             </div>
 
             {/* Enhanced CTA Button with sage motif */}
             <div className="flex justify-center">
               <motion.a
                 href="#guest-list"
-                className={`${cormorant.className} group relative w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-white font-medium text-sm sm:text-base md:text-lg rounded-[2rem] transition-all duration-500 text-center overflow-hidden shadow-xl hover:shadow-2xl border-2 border-[#4a5d4e]/30 hover:border-[#4a5d4e]/50`}
+                className={`${cormorant.className} group relative w-full sm:w-auto px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-white font-medium text-sm sm:text-base md:text-lg rounded-[2rem] transition-all duration-500 text-center overflow-hidden shadow-xl hover:shadow-2xl border-2 border-[#91729E]/30 hover:border-[#91729E]/50`}
                 style={{ 
-                  backgroundImage: "linear-gradient(135deg, #4a5d4e, #3d4d3f)",
-                  boxShadow: "0 10px 40px rgba(74,93,78,0.4), 0 4px 12px rgba(74,93,78,0.3)"
+                  backgroundImage: "linear-gradient(135deg, #91729E, #7a5d85)",
+                  boxShadow: "0 10px 40px rgba(145,114,158,0.4), 0 4px 12px rgba(145,114,158,0.3)"
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -214,17 +214,17 @@ export function Narrative() {
                 whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.98 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundImage = "linear-gradient(135deg, #3d4d3f, #4a5d4e)";
-                  e.currentTarget.style.boxShadow = "0 16px 55px rgba(74,93,78,0.5), 0 6px 18px rgba(74,93,78,0.4)";
+                  e.currentTarget.style.backgroundImage = "linear-gradient(135deg, #7a5d85, #91729E)";
+                  e.currentTarget.style.boxShadow = "0 16px 55px rgba(145,114,158,0.5), 0 6px 18px rgba(145,114,158,0.4)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundImage = "linear-gradient(135deg, #4a5d4e, #3d4d3f)";
-                  e.currentTarget.style.boxShadow = "0 10px 40px rgba(74,93,78,0.4), 0 4px 12px rgba(74,93,78,0.3)";
+                  e.currentTarget.style.backgroundImage = "linear-gradient(135deg, #91729E, #7a5d85)";
+                  e.currentTarget.style.boxShadow = "0 10px 40px rgba(145,114,158,0.4), 0 4px 12px rgba(145,114,158,0.3)";
                 }}
               >
                 {/* Pulsing glow effect with sage accent */}
                 <motion.div 
-                  className="absolute inset-0 bg-[#4a5d4e]/40 rounded-[2rem] blur-2xl"
+                  className="absolute inset-0 bg-[#91729E]/40 rounded-[2rem] blur-2xl"
                   animate={{
                     opacity: [0.4, 0.7, 0.4],
                     scale: [1, 1.1, 1],
@@ -237,7 +237,7 @@ export function Narrative() {
                 />
                 {/* Secondary glow */}
                 <motion.div 
-                  className="absolute inset-0 bg-[#4a5d4e]/20 rounded-[2rem] blur-xl"
+                  className="absolute inset-0 bg-[#91729E]/20 rounded-[2rem] blur-xl"
                   animate={{
                     opacity: [0.2, 0.4, 0.2],
                     scale: [1, 1.15, 1],

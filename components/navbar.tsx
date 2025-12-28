@@ -101,7 +101,7 @@ export function Navbar() {
                   fontWeight: 700,
                   fontSize: '20px',
                   lineHeight: '28px',
-                  color: 'rgb(74, 93, 78)',
+                  color: 'rgb(145, 114, 158)',
                 }}
               >
                 K | M
@@ -121,22 +121,22 @@ export function Navbar() {
                   href={link.href}
                   className={`px-3 lg:px-4 py-2 text-xs lg:text-sm uppercase rounded-lg transition-all duration-500 relative group ${
                     isActive
-                      ? "text-[#4a5d4e] bg-[#F4F1EA]/95 backdrop-blur-md shadow-[0_6px_18px_rgba(74,93,78,0.2)] border border-[#CBB9A3]"
-                      : "text-[#4a5d4e]/80 hover:text-[#4a5d4e] hover:bg-[#F4F1EA]/95 hover:border hover:border-[#CBB9A3]/60 hover:shadow-[0_6px_18px_rgba(74,93,78,0.15)] hover:scale-105 active:scale-95 bg-white/0 border border-transparent"
+                      ? "text-[#91729E] bg-[#F4F1EA]/95 backdrop-blur-md shadow-[0_6px_18px_rgba(145,114,158,0.2)] border border-[#CBB9A3]"
+                      : "text-[#91729E]/80 hover:text-[#91729E] hover:bg-[#F4F1EA]/95 hover:border hover:border-[#CBB9A3]/60 hover:shadow-[0_6px_18px_rgba(145,114,158,0.15)] hover:scale-105 active:scale-95 bg-white/0 border border-transparent"
                   }`}
                   style={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 400 }}
                 >
                   {link.label.toUpperCase()}
                   <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#4a5d4e] via-[#CBB9A3] to-[#4a5d4e] transition-all duration-500 rounded-full ${
+                    className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#91729E] via-[#CBB9A3] to-[#91729E] transition-all duration-500 rounded-full ${
                       isActive
-                        ? "w-full shadow-[0_0_10px_rgba(74,93,78,0.4)]"
-                        : "w-0 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(74,93,78,0.3)]"
+                        ? "w-full shadow-[0_0_10px_rgba(145,114,158,0.4)]"
+                        : "w-0 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(145,114,158,0.3)]"
                     }`}
                   />
                   {/* Active indicator dot */}
                   {isActive && (
-                    <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#4a5d4e] animate-pulse shadow-[0_0_6px_rgba(74,93,78,0.5)]" />
+                    <div className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#91729E] animate-pulse shadow-[0_0_6px_rgba(145,114,158,0.5)]" />
                   )}
                   {/* Subtle accent on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#CBB9A3]/30 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
@@ -155,10 +155,10 @@ export function Navbar() {
                 socialItems={[]}
                 displaySocials={false}
                 displayItemNumbering={true}
-                menuButtonColor="#4a5d4e"
-                openMenuButtonColor="#4a5d4e"
+                menuButtonColor="#91729E"
+                openMenuButtonColor="#91729E"
                 changeMenuColorOnOpen={true}
-                colors={["#4a5d4e", "#B9AACB", "#F4F4F4", "#A8AF8D", "#5B6B3C"]}
+                colors={["#91729E", "#B9AACB", "#F4F4F4", "#A8AF8D", "#5B6B3C"]}
                 accentColor="#B9AACB"
                 isFixed={true}
                 onMenuOpen={() => {}}

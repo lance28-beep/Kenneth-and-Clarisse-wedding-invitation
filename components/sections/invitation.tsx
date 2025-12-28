@@ -52,7 +52,7 @@ export function Invitation() {
           {/* Invitation Text - Elegant matching hero section */}
           <motion.div className="space-y-4 sm:space-y-6 pt-6 sm:pt-8" variants={fadeInUp}>
             <p
-              className={`${cormorant.className} text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#4a5d4e] leading-relaxed font-light`}
+              className={`${cormorant.className} text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#91729E] leading-relaxed font-light`}
               style={{ 
                 letterSpacing: "0.03em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)",
@@ -60,7 +60,7 @@ export function Invitation() {
             >
               Together with our families,
               <br />
-              <span className="text-[#4a5d4e]/90">we joyfully invite you to witness our union.</span>
+              <span className="text-[#91729E]/90">we joyfully invite you to witness our union.</span>
             </p>
           </motion.div>
 
@@ -69,17 +69,17 @@ export function Invitation() {
             className="flex items-center justify-center gap-3 sm:gap-4"
             variants={fadeInUp}
           >
-            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/30 border border-[#4a5d4e]/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4a5d4e]/40" />
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/30 border border-[#4a5d4e]/40" />
-            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/30 border border-[#91729E]/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#91729E]/40" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/30 border border-[#91729E]/40" />
+            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
           </motion.div>
 
           {/* Names - Elegant script style matching hero section */}
           <motion.div className="space-y-3 sm:space-y-4 md:space-y-5" variants={fadeInUp}>
             <h1
-              className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[#4a5d4e]"
+              className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[#91729E]"
               style={{ 
                 letterSpacing: "0.02em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
@@ -88,7 +88,7 @@ export function Invitation() {
               {groomName}
             </h1>
             <motion.p
-              className={`${cormorant.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#4a5d4e] font-light`}
+              className={`${cormorant.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#91729E] font-light`}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
@@ -99,7 +99,7 @@ export function Invitation() {
               &
             </motion.p>
             <h1
-              className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[#4a5d4e]"
+              className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[#91729E]"
               style={{ 
                 letterSpacing: "0.02em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
@@ -114,17 +114,17 @@ export function Invitation() {
             className="flex items-center justify-center gap-3 sm:gap-4"
             variants={fadeInUp}
           >
-            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/30 border border-[#4a5d4e]/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4a5d4e]/40" />
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/30 border border-[#4a5d4e]/40" />
-            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/30 border border-[#91729E]/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#91729E]/40" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/30 border border-[#91729E]/40" />
+            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
           </motion.div>
 
           {/* Date & Time - Matching hero section style */}
           <motion.div className="space-y-5 sm:space-y-6 md:space-y-8" variants={fadeInUp}>
             <div
-              className={`${cormorant.className} flex flex-col items-center gap-4 sm:gap-5 md:gap-6 text-[#4a5d4e]`}
+              className={`${cormorant.className} flex flex-col items-center gap-4 sm:gap-5 md:gap-6 text-[#91729E]`}
             >
               <span 
                 className="text-base sm:text-lg md:text-xl lg:text-2xl uppercase tracking-[0.2em] font-light"
@@ -181,17 +181,17 @@ export function Invitation() {
             className="flex items-center justify-center gap-3 sm:gap-4"
             variants={fadeInUp}
           >
-            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/30 border border-[#4a5d4e]/40" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4a5d4e]/40" />
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/30 border border-[#4a5d4e]/40" />
-            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/30 border border-[#91729E]/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#91729E]/40" />
+            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/30 border border-[#91729E]/40" />
+            <span className="h-px w-12 sm:w-20 md:w-24 bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
           </motion.div>
 
           {/* Venue - Matching hero section style */}
           <motion.div className="space-y-3 sm:space-y-4" variants={fadeInUp}>
             <p
-              className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl text-[#4a5d4e] uppercase tracking-[0.18em] font-light`}
+              className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl text-[#91729E] uppercase tracking-[0.18em] font-light`}
               style={{
                 textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)",
               }}
@@ -199,7 +199,7 @@ export function Invitation() {
               {siteConfig.ceremony.venue}
             </p>
             <p
-              className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#4a5d4e]/85 italic font-light`}
+              className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#91729E]/85 italic font-light`}
               style={{ 
                 letterSpacing: "0.02em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)",
@@ -212,7 +212,7 @@ export function Invitation() {
           {/* Message - Matching hero section style */}
           <motion.div className="pt-6 sm:pt-8 md:pt-10" variants={fadeInUp}>
             <p
-              className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl text-[#4a5d4e] leading-relaxed max-w-2xl mx-auto font-light`}
+              className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl text-[#91729E] leading-relaxed max-w-2xl mx-auto font-light`}
               style={{ 
                 letterSpacing: "0.02em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)",
@@ -226,7 +226,7 @@ export function Invitation() {
           <motion.div className="pt-8 sm:pt-10 md:pt-12" variants={fadeInUp}>
             <motion.a
               href="#guest-list"
-              className={`${cormorant.className} inline-block px-12 sm:px-14 md:px-16 lg:px-20 py-4 sm:py-4.5 md:py-5 bg-[#4a5d4e] text-white uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg font-medium rounded-sm shadow-[0_6px_20px_rgba(74,93,78,0.4)] transition-all duration-300 hover:bg-[#3d4d3f] hover:shadow-[0_8px_28px_rgba(74,93,78,0.5)] relative overflow-hidden group`}
+              className={`${cormorant.className} inline-block px-12 sm:px-14 md:px-16 lg:px-20 py-4 sm:py-4.5 md:py-5 bg-[#91729E] text-white uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg font-medium rounded-sm shadow-[0_6px_20px_rgba(145,114,158,0.4)] transition-all duration-300 hover:bg-[#7a5d85] hover:shadow-[0_8px_28px_rgba(145,114,158,0.5)] relative overflow-hidden group`}
               whileHover={{ y: -3, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

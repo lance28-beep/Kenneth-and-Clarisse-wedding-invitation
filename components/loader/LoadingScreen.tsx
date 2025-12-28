@@ -80,7 +80,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               fontFamily: '"Cormorant Garamond", serif',
               fontWeight: 700,
               lineHeight: '1.2',
-              color: 'rgb(74, 93, 78)',
+              color: 'rgb(145, 114, 158)',
             }}
           >
             K | M
@@ -90,7 +90,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Copywriting paragraph */}
         <div className="text-center mb-8 sm:mb-10 max-w-xs sm:max-w-md px-4">
           <p
-            className="text-sm sm:text-base leading-relaxed text-[#4a5d4e]/80 italic"
+            className="text-sm sm:text-base leading-relaxed text-[#91729E]/80 italic"
             style={{ fontFamily: '"Cormorant Garamond", serif', fontWeight: 400 }}
           >
             Please wait a moment while we set the scene, tune the music, and open the doors to celebrate love, life, and forever.
@@ -100,7 +100,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Loading text */}
         <div className="text-center mb-8 sm:mb-12">
           <p
-            className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#4a5d4e] mb-4"
+            className="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#91729E] mb-4"
             style={{ fontFamily: '"Cinzel", serif', fontWeight: 500 }}
           >
             Loading Invitation
@@ -118,7 +118,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         {/* Copyright - matching footer style */}
         <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 text-center px-4">
           <p
-            className="text-[10px] sm:text-xs text-[#4a5d4e]/70 leading-relaxed"
+            className="text-[10px] sm:text-xs text-[#91729E]/70 leading-relaxed"
             style={{ fontFamily: '"Cormorant Garamond", serif' }}
           >
             © {year} Clarisse & Kenneth — crafted with love, prayers, and gratitude.

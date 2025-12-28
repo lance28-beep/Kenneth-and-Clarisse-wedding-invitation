@@ -132,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               fontFamily: '"Cormorant Garamond", serif',
               fontWeight: 700,
               lineHeight: '1.2',
-              color: 'rgb(74, 93, 78)',
+              color: 'rgb(145, 114, 158)',
             }}
           >
             K | M
@@ -144,11 +144,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
         <div className="flex flex-col items-center justify-end w-full gap-4 pb-14 sm:pb-16 md:pb-20">
           <FadeIn show={visible} delay={600}>
           <h2
-            className="text-6xl md:text-8xl text-[#4a5d4e] transform -rotate-6 drop-shadow-lg opacity-95"
+            className="text-6xl md:text-8xl text-[#91729E] transform -rotate-6 drop-shadow-lg opacity-95"
             style={{
               fontFamily: '"Great Vibes", cursive',
               fontWeight: 400,
-              textShadow: '0 4px 12px rgba(74, 93, 78, 0.2), 0 2px 6px rgba(74, 93, 78, 0.15)',
+              textShadow: '0 4px 12px rgba(145, 114, 158, 0.2), 0 2px 6px rgba(145, 114, 158, 0.15)',
             }}
           >
             You are
@@ -157,11 +157,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
           
           <FadeIn show={visible} delay={900}>
           <h1
-            className="text-5xl md:text-7xl text-[#4a5d4e] font-bold tracking-wider uppercase drop-shadow-[0_6px_16px_rgba(74,93,78,0.25)]"
+            className="text-5xl md:text-7xl text-[#91729E] font-bold tracking-wider uppercase drop-shadow-[0_6px_16px_rgba(145,114,158,0.25)]"
             style={{
               fontFamily: '"Cinzel", serif',
               fontWeight: 700,
-              textShadow: '0 4px 12px rgba(74, 93, 78, 0.3), 0 2px 8px rgba(74, 93, 78, 0.2)',
+              textShadow: '0 4px 12px rgba(145, 114, 158, 0.3), 0 2px 8px rgba(145, 114, 158, 0.2)',
             }}
           >
             Invited!
@@ -173,10 +173,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             onClick={() => {
               onOpen();
             }}
-            className="group relative px-10 py-4 bg-[#A38D78] text-[#FAF9F5] font-serif text-sm tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#CBB9A3] shadow-lg hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 rounded-sm overflow-hidden border border-[#CBB9A3]/40"
+            className="group relative px-10 py-4 bg-[#E6D9F2] text-[#91729E] font-serif text-sm tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#D4C4E5] shadow-lg hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 rounded-sm overflow-hidden border border-[#91729E]/40"
           >
             <span
-              className="relative z-10 text-[#FAF9F5] drop-shadow-md"
+              className="relative z-10 text-[#91729E] drop-shadow-md"
               style={{ fontFamily: '"Cinzel", serif', fontWeight: 500 }}
             >
               Open Invitation

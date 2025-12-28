@@ -257,7 +257,7 @@ export function Hero() {
       {/* Top center text - Elegant light grey serif style */}
       <div className="absolute top-0 left-0 right-0 z-10 flex flex-col items-center justify-center pt-8 sm:pt-12 md:pt-16 lg:pt-20">
         <h1
-          className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#4a5d4e]"
+          className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#91729E]"
           style={{
             textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
             letterSpacing: "0.02em",
@@ -266,7 +266,7 @@ export function Hero() {
           {siteConfig.couple.groomNickname} & {siteConfig.couple.brideNickname}
         </h1>
         <p
-          className="text-[#4a5d4e] text-base sm:text-lg md:text-xl lg:text-2xl mt-4 sm:mt-5 md:mt-6"
+          className="text-[#91729E] text-base sm:text-lg md:text-xl lg:text-2xl mt-4 sm:mt-5 md:mt-6"
           style={{
             fontFamily: '"Cormorant Garamond", serif',
             fontWeight: 400,
@@ -277,7 +277,7 @@ export function Hero() {
           SAVE THE DATE
         </p>
         <p
-          className="text-[#4a5d4e] text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 sm:mt-3"
+          className="text-[#91729E] text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 sm:mt-3"
           style={{
             fontFamily: '"Cormorant Garamond", serif',
             fontWeight: 400,

@@ -105,8 +105,8 @@ export function FAQ() {
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                            repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                            repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
           }}
         />
       </div>
@@ -118,14 +118,14 @@ export function FAQ() {
       <div className="relative z-10 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
         {/* Small label */}
         <p
-          className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] mb-2 font-light`}
+          className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#91729E] mb-2 font-light`}
           style={{ textShadow: "0 1px 3px rgba(0,0,0,0.1)" }}
         >
           Questions & Answers
         </p>
 
         <h2
-          className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e] mb-1.5 sm:mb-3 md:mb-4"
+          className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E] mb-1.5 sm:mb-3 md:mb-4"
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
         >
           Frequently Asked Questions
@@ -133,9 +133,9 @@ export function FAQ() {
 
         {/* Simple divider */}
         <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-transparent" />
-          <div className="w-1.5 h-1.5 bg-[#4a5d4e]/60 rounded-full" />
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-transparent" />
+          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-transparent" />
+          <div className="w-1.5 h-1.5 bg-[#91729E]/60 rounded-full" />
+          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-transparent" />
         </div>
       </div>
 
@@ -147,8 +147,8 @@ export function FAQ() {
           <div
             className="absolute inset-0 opacity-[0.02] pointer-events-none"
             style={{
-              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                              repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                              repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
             }}
           />
           
@@ -161,20 +161,20 @@ export function FAQ() {
                 return (
                   <div
                     key={index}
-                    className="rounded-lg sm:rounded-xl border border-[#D0D0D0]/40 bg-white/50 hover:border-[#4a5d4e]/60 hover:bg-white/70 transition-all duration-300 overflow-hidden shadow-sm"
+                    className="rounded-lg sm:rounded-xl border border-[#D0D0D0]/40 bg-white/50 hover:border-[#91729E]/60 hover:bg-white/70 transition-all duration-300 overflow-hidden shadow-sm"
                   >
                     <button
                       onClick={() => toggleItem(index)}
-                      className="group w-full px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#4a5d4e]/50 focus-visible:ring-offset-2 transition-colors"
+                      className="group w-full px-2.5 sm:px-3 md:px-4 lg:px-5 py-2 sm:py-2.5 md:py-3 lg:py-4 flex items-center justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#91729E]/50 focus-visible:ring-offset-2 transition-colors"
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                     >
-                      <span className={`${cormorant.className} font-semibold text-[#243127] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#4a5d4e]`} style={{ fontWeight: 300 }}>
+                      <span className={`${cormorant.className} font-semibold text-[#243127] pr-2 sm:pr-3 md:pr-4 text-xs sm:text-sm md:text-base lg:text-lg leading-snug sm:leading-relaxed transition-colors duration-200 group-hover:text-[#91729E]`} style={{ fontWeight: 300 }}>
                         {item.question}
                       </span>
                       <ChevronDown
                         size={18}
-                        className={`text-[#4a5d4e]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#4a5d4e]" : ""} w-4 h-4 sm:w-5 sm:h-5`}
+                        className={`text-[#91729E]/60 flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-[#91729E]" : ""} w-4 h-4 sm:w-5 sm:h-5`}
                         aria-hidden
                       />
                     </button>
@@ -193,7 +193,7 @@ export function FAQ() {
                               {item.answer.split("[RSVP_LINK]")[0]}
                               <a 
                                 href="#guest-list" 
-                                className="text-[#4a5d4e] underline font-bold hover:text-[#4a5d4e]/80 transition-colors"
+                                className="text-[#91729E] underline font-bold hover:text-[#91729E]/80 transition-colors"
                                 onClick={(e) => {
                                   e.preventDefault()
                                   document.getElementById('guest-list')?.scrollIntoView({ behavior: 'smooth' })
@@ -210,7 +210,7 @@ export function FAQ() {
                                 href="https://drive.google.com/drive/folders/1kOrf64ay6vx0pIeIjavvWp31B8nFWowQ?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-[#4a5d4e] underline font-bold hover:text-[#4a5d4e]/80 transition-colors"
+                                className="text-[#91729E] underline font-bold hover:text-[#91729E]/80 transition-colors"
                               >
                                 {item.answer.match(/\[DRIVE_LINK\](.*?)\[\/DRIVE_LINK\]/)?.[1]}
                               </a>

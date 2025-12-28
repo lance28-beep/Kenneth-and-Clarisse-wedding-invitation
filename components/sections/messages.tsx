@@ -96,36 +96,36 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
       {/* Style to override placeholder color */}
       <style>{`
         .message-form-input::placeholder {
-          color: #4a5d4e !important;
+          color: #91729E !important;
           opacity: 0.5 !important;
         }
         .message-form-textarea::placeholder {
-          color: #4a5d4e !important;
+          color: #91729E !important;
           opacity: 0.5 !important;
         }
       `}</style>
       
       {/* Simple decorative elements */}
-      <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#4a5d4e]/10 rounded-full blur-sm" />
-      <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-[#4a5d4e]/8 rounded-full blur-md" />
+      <div className="absolute -top-3 -left-3 w-8 h-8 bg-[#91729E]/10 rounded-full blur-sm" />
+      <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-[#91729E]/8 rounded-full blur-md" />
       
-      <Card className={`relative w-full border border-[#4a5d4e]/30 shadow-[0_4px_16px_rgba(74,93,78,0.15)] bg-white transition-all duration-300 group overflow-hidden rounded-sm ${
-        isFocused ? 'scale-[1.01] border-[#4a5d4e]/50 shadow-[0_6px_20px_rgba(74,93,78,0.2)]' : 'hover:shadow-[0_6px_20px_rgba(74,93,78,0.2)]'
+      <Card className={`relative w-full border border-[#91729E]/30 shadow-[0_4px_16px_rgba(145,114,158,0.15)] bg-white transition-all duration-300 group overflow-hidden rounded-sm ${
+        isFocused ? 'scale-[1.01] border-[#91729E]/50 shadow-[0_6px_20px_rgba(145,114,158,0.2)]' : 'hover:shadow-[0_6px_20px_rgba(145,114,158,0.2)]'
       } ${isSubmitted ? 'animate-bounce' : ''}`}>
         {/* Simple paper texture */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
         }} />
         
         {/* Success animation overlay */}
         {isSubmitted && (
-          <div className="absolute inset-0 bg-[#4a5d4e]/10 flex items-center justify-center z-20 pointer-events-none">
+          <div className="absolute inset-0 bg-[#91729E]/10 flex items-center justify-center z-20 pointer-events-none">
             <div className="flex flex-col items-center gap-2 animate-pulse">
-              <div className="w-16 h-16 bg-[#4a5d4e] rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 bg-[#91729E] rounded-full flex items-center justify-center shadow-lg">
                 <Sparkles className="h-8 w-8 text-white" />
               </div>
-              <p className={`${cormorant.className} text-[#4a5d4e] font-semibold text-lg`}>Sent!</p>
+              <p className={`${cormorant.className} text-[#91729E] font-semibold text-lg`}>Sent!</p>
             </div>
           </div>
         )}
@@ -134,14 +134,14 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
           {/* Header with icon */}
           <div className="text-center mb-4 sm:mb-5 md:mb-6">
             <div className="relative inline-block mb-3 sm:mb-4">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#4a5d4e] rounded-full flex items-center justify-center mx-auto shadow-md">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#91729E] rounded-full flex items-center justify-center mx-auto shadow-md">
                 <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
               </div>
             </div>
-            <h3 className={`${cormorant.className} text-lg sm:text-xl md:text-2xl font-semibold text-[#4a5d4e] mb-2 sm:mb-3`}>
+            <h3 className={`${cormorant.className} text-lg sm:text-xl md:text-2xl font-semibold text-[#91729E] mb-2 sm:mb-3`}>
               Share Your Love
             </h3>
-            <p className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#4a5d4e]/80 font-light`}>
+            <p className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#91729E]/80 font-light`}>
               Your words will be part of {coupleDisplayName}&apos;s keepsake for years to come.
             </p>
           </div>
@@ -155,11 +155,11 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
           >
             {/* Name Field */}
             <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
-              <label className={`${cormorant.className} block text-xs sm:text-sm md:text-base font-medium text-[#4a5d4e] flex items-center gap-1.5 sm:gap-2`}>
-                <div className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-[#4a5d4e]/20 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  focusedField === 'name' ? 'scale-110 bg-[#4a5d4e]/30' : ''
+              <label className={`${cormorant.className} block text-xs sm:text-sm md:text-base font-medium text-[#91729E] flex items-center gap-1.5 sm:gap-2`}>
+                <div className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-[#91729E]/20 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  focusedField === 'name' ? 'scale-110 bg-[#91729E]/30' : ''
                 }`}>
-                  <Heart className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-[#4a5d4e]" />
+                  <Heart className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-[#91729E]" />
                 </div>
                 Your Name
               </label>
@@ -172,10 +172,10 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
                   placeholder="Full Name"
-                  className={`${cormorant.className} message-form-input w-full border border-[#4a5d4e]/30 rounded-sm py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-5 text-xs sm:text-sm md:text-base placeholder:italic transition-all duration-300 bg-white shadow-sm hover:shadow-md focus:shadow-md ${
+                  className={`${cormorant.className} message-form-input w-full border border-[#91729E]/30 rounded-sm py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-5 text-xs sm:text-sm md:text-base placeholder:italic transition-all duration-300 bg-white shadow-sm hover:shadow-md focus:shadow-md ${
                     focusedField === 'name' 
-                      ? 'border-[#4a5d4e] focus:border-[#4a5d4e] focus:ring-2 focus:ring-[#4a5d4e]/20' 
-                      : 'hover:border-[#4a5d4e]/40'
+                      ? 'border-[#91729E] focus:border-[#91729E] focus:ring-2 focus:ring-[#91729E]/20' 
+                      : 'hover:border-[#91729E]/40'
                   }`}
                 />
                 {nameValue && (
@@ -189,17 +189,17 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             {/* Message Field */}
             <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
               <div className="flex items-center justify-between">
-                <label className={`${cormorant.className} block text-xs sm:text-sm md:text-base font-medium text-[#4a5d4e] flex items-center gap-1.5 sm:gap-2`}>
-                  <div className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-[#4a5d4e]/20 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    focusedField === 'message' ? 'scale-110 bg-[#4a5d4e]/30' : ''
+                <label className={`${cormorant.className} block text-xs sm:text-sm md:text-base font-medium text-[#91729E] flex items-center gap-1.5 sm:gap-2`}>
+                  <div className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-[#91729E]/20 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    focusedField === 'message' ? 'scale-110 bg-[#91729E]/30' : ''
                   }`}>
-                    <MessageCircle className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-[#4a5d4e]" />
+                    <MessageCircle className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-[#91729E]" />
                   </div>
                   Your Message
                 </label>
                 {messageValue && (
                   <span className={`${cormorant.className} text-[10px] sm:text-xs transition-colors ${
-                    messageValue.length > 500 ? 'text-red-500' : 'text-[#4a5d4e]/60'
+                    messageValue.length > 500 ? 'text-red-500' : 'text-[#91729E]/60'
                   }`}>
                     {messageValue.length}/500
                   </span>
@@ -218,10 +218,10 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   onFocus={() => setFocusedField('message')}
                   onBlur={() => setFocusedField(null)}
                   placeholder={`Write a heartfelt message for ${coupleDisplayName}... share your wishes, memories, or words of love that will be treasured forever 💕`}
-                  className={`${cormorant.className} message-form-textarea w-full border border-[#4a5d4e]/30 rounded-sm min-h-[80px] sm:min-h-[100px] md:min-h-[120px] text-xs sm:text-sm md:text-base placeholder:italic placeholder:leading-relaxed transition-all duration-300 resize-none bg-white shadow-sm hover:shadow-md focus:shadow-md py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5 ${
+                  className={`${cormorant.className} message-form-textarea w-full border border-[#91729E]/30 rounded-sm min-h-[80px] sm:min-h-[100px] md:min-h-[120px] text-xs sm:text-sm md:text-base placeholder:italic placeholder:leading-relaxed transition-all duration-300 resize-none bg-white shadow-sm hover:shadow-md focus:shadow-md py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-5 ${
                     focusedField === 'message' 
-                      ? 'border-[#4a5d4e] focus:border-[#4a5d4e] focus:ring-2 focus:ring-[#4a5d4e]/20' 
-                      : 'hover:border-[#4a5d4e]/40'
+                      ? 'border-[#91729E] focus:border-[#91729E] focus:ring-2 focus:ring-[#91729E]/20' 
+                      : 'hover:border-[#91729E]/40'
                   }`}
                 />
                 {messageValue && (
@@ -236,20 +236,20 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
             <Button
               type="submit"
               disabled={isSubmitting || !nameValue.trim() || !messageValue.trim()}
-              className={`${cormorant.className} w-full text-white py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-5 md:px-6 rounded-sm text-xs sm:text-sm md:text-base font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group border border-[#4a5d4e]`}
+              className={`${cormorant.className} w-full text-white py-2.5 sm:py-3 md:py-3.5 px-4 sm:px-5 md:px-6 rounded-sm text-xs sm:text-sm md:text-base font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group border border-[#91729E]`}
               style={{ 
-                backgroundColor: "#4a5d4e",
-                boxShadow: "0 4px 12px rgba(74,93,78,0.3), 0 2px 6px rgba(74,93,78,0.2)",
+                backgroundColor: "#91729E",
+                boxShadow: "0 4px 12px rgba(145,114,158,0.3), 0 2px 6px rgba(145,114,158,0.2)",
               }}
               onMouseEnter={(e) => {
                 if (!e.currentTarget.disabled) {
-                  e.currentTarget.style.backgroundColor = "#3d4d3f";
-                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(74,93,78,0.4), 0 3px 10px rgba(74,93,78,0.25)";
+                  e.currentTarget.style.backgroundColor = "#7a5d85";
+                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(145,114,158,0.4), 0 3px 10px rgba(145,114,158,0.25)";
                 }
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#4a5d4e";
-                e.currentTarget.style.boxShadow = "0 4px 12px rgba(74,93,78,0.3), 0 2px 6px rgba(74,93,78,0.2)";
+                e.currentTarget.style.backgroundColor = "#91729E";
+                e.currentTarget.style.boxShadow = "0 4px 12px rgba(145,114,158,0.3), 0 2px 6px rgba(145,114,158,0.2)";
               }}
             >
               {isSubmitting ? (
@@ -322,11 +322,11 @@ export function Messages() {
       {/* Simple paper texture background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
         }} />
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#91729E]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#91729E]/5 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
@@ -334,19 +334,19 @@ export function Messages() {
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           <div className="space-y-3 sm:space-y-4 md:space-y-5">
             <p
-              className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] font-light`}
+              className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#91729E] font-light`}
               style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
             >
               Leave a Message
             </p>
-            <h2 className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e]" style={{ 
+            <h2 className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E]" style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
             }}>
               Share Your Wishes
             </h2>
             <p
-              className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#4a5d4e]/85 font-light max-w-2xl mx-auto leading-relaxed italic`}
+              className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#91729E]/85 font-light max-w-2xl mx-auto leading-relaxed italic`}
               style={{ 
                 letterSpacing: "0.02em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -357,9 +357,9 @@ export function Messages() {
           </div>
 
           <div className="flex items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
-            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/50 border border-[#4a5d4e]/40" />
-            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
+            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/50 border border-[#91729E]/40" />
+            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
           </div>
         </div>
 
@@ -384,14 +384,14 @@ export function Messages() {
         <div className="relative max-w-4xl mx-auto">
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <div className="relative inline-block mb-4 sm:mb-5 md:mb-6">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#4a5d4e] rounded-full flex items-center justify-center mx-auto shadow-md">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#91729E] rounded-full flex items-center justify-center mx-auto shadow-md">
                 <MessageCircle className="h-5 w-5 sm:h-6 sm:h-6 md:h-8 md:w-8 text-white" />
               </div>
             </div>
-            <h3 className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl font-semibold text-[#4a5d4e] mb-2 sm:mb-3`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}>
+            <h3 className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl font-semibold text-[#91729E] mb-2 sm:mb-3`} style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}>
               Messages from Loved Ones
             </h3>
-            <p className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#4a5d4e]/80 font-light max-w-2xl mx-auto px-2 sm:px-4`}>
+            <p className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#91729E]/80 font-light max-w-2xl mx-auto px-2 sm:px-4`}>
               Read the beautiful messages shared by family and friends
             </p>
           </div>

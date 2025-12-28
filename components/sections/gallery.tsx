@@ -109,25 +109,25 @@ export function Gallery() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle paper texture effect */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
         }} />
         {/* Soft sage green accents */}
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#91729E]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#91729E]/5 via-transparent to-transparent" />
       </div>
 
       {/* Header - Elegant sage green text */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
         <div className="space-y-3 sm:space-y-4 md:space-y-5">
           <p
-            className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] font-light`}
+            className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#91729E] font-light`}
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
           >
             Our Gallery
           </p>
           <h2
-            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e]"
+            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E]"
             style={{ 
               letterSpacing: "0.02em",
               textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -135,7 +135,7 @@ export function Gallery() {
           >
             Captured Moments
           </h2>
-          <p className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#4a5d4e]/85 font-light max-w-2xl mx-auto leading-relaxed italic`} style={{ 
+          <p className={`${cormorant.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#91729E]/85 font-light max-w-2xl mx-auto leading-relaxed italic`} style={{ 
             letterSpacing: "0.02em",
             textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
           }}>
@@ -144,9 +144,9 @@ export function Gallery() {
         </div>
 
         <div className="flex items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
           <motion.div
-            className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/50 border border-[#4a5d4e]/40"
+            className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/50 border border-[#91729E]/40"
             animate={{
               scale: [1, 1.3, 1],
               opacity: [0.6, 1, 0.6],
@@ -157,7 +157,7 @@ export function Gallery() {
               ease: "easeInOut",
             }}
           />
-          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+          <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
         </div>
       </div>
 
@@ -167,7 +167,7 @@ export function Gallery() {
           <div className="max-w-5xl w-full">
             {isLoading ? (
               <div className="flex items-center justify-center h-48 sm:h-60 md:h-72">
-                <div className="w-10 h-10 border-[3px] border-[#4a5d4e]/20 border-t-[#4a5d4e] rounded-full animate-spin" />
+                <div className="w-10 h-10 border-[3px] border-[#91729E]/20 border-t-[#91729E] rounded-full animate-spin" />
               </div>
             ) : (
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
@@ -175,7 +175,7 @@ export function Gallery() {
                   <motion.button
                     key={item.image + index}
                     type="button"
-                    className="group relative w-full overflow-hidden rounded-sm bg-white border border-[#4a5d4e]/20 shadow-[0_2px_8px_rgba(74,93,78,0.15)] hover:shadow-[0_4px_16px_rgba(74,93,78,0.25)] hover:border-[#4a5d4e]/40 transition-all duration-300"
+                    className="group relative w-full overflow-hidden rounded-sm bg-white border border-[#91729E]/20 shadow-[0_2px_8px_rgba(145,114,158,0.15)] hover:shadow-[0_4px_16px_rgba(145,114,158,0.25)] hover:border-[#91729E]/40 transition-all duration-300"
                     onClick={() => {
                       setSelectedImage(item)
                       setCurrentIndex(index)
@@ -187,7 +187,7 @@ export function Gallery() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     {/* Simple paper-like shadow effect */}
-                    <div className="absolute -inset-0.5 bg-[#4a5d4e]/5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute -inset-0.5 bg-[#91729E]/5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="relative aspect-[3/4] md:aspect-square overflow-hidden">
                       <img
@@ -203,7 +203,7 @@ export function Gallery() {
                     </div>
                     
                     {/* Image counter badge with sage green colors */}
-                    <div className="absolute top-2 right-2 bg-[#4a5d4e]/90 backdrop-blur-sm rounded-sm px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-[#4a5d4e]/70">
+                    <div className="absolute top-2 right-2 bg-[#91729E]/90 backdrop-blur-sm rounded-sm px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-[#91729E]/70">
                       <span className={`${cormorant.className} text-xs font-medium text-white tracking-wide`}>
                         {index + 1}/{galleryItems.length}
                       </span>
@@ -389,7 +389,7 @@ export function Gallery() {
       <div className="relative z-10 mt-10 sm:mt-12 md:mt-16 flex justify-center px-4">
         <motion.a
           href="/gallery"
-          className={`${cormorant.className} group inline-flex items-center gap-2 px-8 sm:px-10 md:px-12 lg:px-16 py-3.5 sm:py-4 md:py-5 rounded-sm font-medium transition-all duration-300 uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg whitespace-nowrap relative overflow-hidden bg-[#4a5d4e] text-white border border-[#4a5d4e] shadow-[0_4px_12px_rgba(74,93,78,0.3)] hover:bg-[#3d4d3f] hover:shadow-[0_6px_20px_rgba(74,93,78,0.4)]`}
+          className={`${cormorant.className} group inline-flex items-center gap-2 px-8 sm:px-10 md:px-12 lg:px-16 py-3.5 sm:py-4 md:py-5 rounded-sm font-medium transition-all duration-300 uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg whitespace-nowrap relative overflow-hidden bg-[#91729E] text-white border border-[#91729E] shadow-[0_4px_12px_rgba(145,114,158,0.3)] hover:bg-[#7a5d85] hover:shadow-[0_6px_20px_rgba(145,114,158,0.4)]`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

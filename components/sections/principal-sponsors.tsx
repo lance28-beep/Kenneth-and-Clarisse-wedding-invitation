@@ -36,7 +36,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-        className={`relative ${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg font-extrabold uppercase text-[#111814] mb-2 sm:mb-2.5 md:mb-3 tracking-[0.14em] sm:tracking-[0.18em] ${textAlign} ${className} transition-all duration-300 whitespace-nowrap`}
+        className={`relative ${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg font-extrabold uppercase text-[#91729E] mb-2 sm:mb-2.5 md:mb-3 tracking-[0.14em] sm:tracking-[0.18em] ${textAlign} ${className} transition-all duration-300 whitespace-nowrap`}
       >
         {children}
       </h3>
@@ -54,10 +54,10 @@ export function PrincipalSponsors() {
         className={`relative flex flex-col ${containerAlign} justify-center py-1 sm:py-1.5 md:py-2.5 w-full group/item transition-all duration-300 hover:scale-[1.02] sm:hover:scale-[1.03]`}
       >
         {/* Hover highlight effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4a5d4e]/15 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 rounded-md" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#91729E]/15 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 rounded-md" />
 
         <p
-          className={`relative text-[#243127] text-[11px] sm:text-[13px] md:text-sm lg:text-base font-semibold leading-snug sm:leading-relaxed break-words ${textAlign} group-hover/item:text-[#1A231C] transition-all duration-300`}
+          className={`relative text-[#91729E] text-[11px] sm:text-[13px] md:text-sm lg:text-base font-semibold leading-snug sm:leading-relaxed break-words ${textAlign} group-hover/item:text-[#7a5d85] transition-all duration-300`}
         >
           {name}
         </p>
@@ -132,12 +132,12 @@ export function PrincipalSponsors() {
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {/* Subtle paper texture effect */}
           <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                            repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                            repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
           }} />
           {/* Soft accents */}
-          <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#91729E]/5 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#91729E]/5 via-transparent to-transparent" />
         </div>
 
         {/* Section Header */}
@@ -149,7 +149,7 @@ export function PrincipalSponsors() {
           <div className="space-y-3 sm:space-y-4 md:space-y-5">
             {/* Small label - elegant uppercase */}
             <p
-              className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] font-light`}
+              className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#91729E] font-light`}
               style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
             >
               Our Beloved Principal Sponsors
@@ -157,7 +157,7 @@ export function PrincipalSponsors() {
 
             {/* Main title - elegant script */}
             <h2
-              className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e]"
+              className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#91729E]"
               style={{ 
                 letterSpacing: "0.02em",
                 textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
@@ -169,9 +169,9 @@ export function PrincipalSponsors() {
 
           {/* Elegant divider */}
           <div className="flex items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
-            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#4a5d4e]/50 border border-[#4a5d4e]/40" />
-            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#4a5d4e]/40 to-[#4a5d4e]/60" />
+            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-[#91729E]/40 to-[#91729E]/60" />
+            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#91729E]/50 border border-[#91729E]/40" />
+            <div className="w-12 sm:w-20 md:w-24 h-px bg-gradient-to-l from-transparent via-[#91729E]/40 to-[#91729E]/60" />
           </div>
         </div>
 
@@ -185,8 +185,8 @@ export function PrincipalSponsors() {
           <div className="relative bg-[#FAF9F5]/98 backdrop-blur-md overflow-hidden border border-[#D0D0D0]/40 shadow-[0_16px_60px_rgba(0,0,0,0.08)] transition-all duration-500 group">
             {/* Paper texture overlay */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{
-              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
-                              repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+              backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #91729E 2px, #91729E 4px),
+                              repeating-linear-gradient(90deg, transparent, transparent 2px, #91729E 2px, #91729E 4px)`,
             }} />
             
             {/* Card content */}
@@ -195,8 +195,8 @@ export function PrincipalSponsors() {
               {isLoading ? (
                 <div className="flex items-center justify-center py-24 sm:py-28 md:py-32">
                   <div className="flex flex-col items-center gap-4">
-                    <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#4a5d4e]/70" />
-                    <span className="text-[#4a5d4e]/80 font-serif text-base sm:text-lg">Loading sponsors...</span>
+                    <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#91729E]/70" />
+                    <span className="text-[#91729E]/80 font-serif text-base sm:text-lg">Loading sponsors...</span>
                   </div>
                 </div>
               ) : error ? (
@@ -205,7 +205,7 @@ export function PrincipalSponsors() {
                     <p className="text-red-700/80 font-serif text-base sm:text-lg mb-3">{error}</p>
                     <button
                       onClick={fetchSponsors}
-                      className="text-[#4a5d4e]/90 hover:text-[#4a5d4e] font-serif underline transition-colors duration-200"
+                      className="text-[#91729E]/90 hover:text-[#91729E] font-serif underline transition-colors duration-200"
                     >
                       Try again
                     </button>
@@ -213,8 +213,8 @@ export function PrincipalSponsors() {
                 </div>
               ) : sponsorPairs.length === 0 ? (
                 <div className="text-center py-24 sm:py-28 md:py-32">
-                  <Users className="h-14 w-14 sm:h-16 sm:w-16 text-[#4a5d4e]/30 mx-auto mb-4" />
-                  <p className="text-[#4a5d4e]/60 font-serif text-base sm:text-lg">No sponsors yet</p>
+                  <Users className="h-14 w-14 sm:h-16 sm:w-16 text-[#91729E]/30 mx-auto mb-4" />
+                  <p className="text-[#91729E]/60 font-serif text-base sm:text-lg">No sponsors yet</p>
                 </div>
               ) : (
                 <div className="mb-3 sm:mb-4 md:mb-6 lg:mb-8 space-y-6 sm:space-y-8">
