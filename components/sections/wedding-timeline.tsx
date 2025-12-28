@@ -43,7 +43,7 @@ const timelineEvents: TimelineEvent[] = [
   {
     time: ceremonyTime,
     title: "Wedding Ceremony",
-    description: `Celebrate ${brideNickname} & ${groomNickname} as they say "I do."`,
+    description: `Celebrate ${groomNickname} & ${brideNickname} as they say "I do."`,
     location: ceremonyVenue,
     icon: RingsIcon,
   },
@@ -57,7 +57,7 @@ const timelineEvents: TimelineEvent[] = [
   {
     time: "Send-off",
     title: "Send-off",
-    description: `A warm send-off for ${brideNickname} & ${groomNickname} as they begin their new chapter together.`,
+    description: `A warm send-off for ${groomNickname} & ${brideNickname} as they begin their new chapter together.`,
     location: receptionVenue,
     icon: CarIcon,
     imageSrc: "/weddingTimeline/Send-off.png",

@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/sections/ui/button"
+import { Input } from "@/components/sections/ui/input"
+import { Textarea } from "@/components/sections/ui/textarea"
 import {
   Calendar,
   MapPin,
@@ -23,7 +23,7 @@ import {
   Trash2,
   X,
 } from "lucide-react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/sections/ui/tabs"
 
 interface WeddingDetails {
   couple: {

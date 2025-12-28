@@ -170,6 +170,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <link rel="preload" as="image" href={mobileHero} media="(max-width: 767px)" />
         <link rel="preload" as="image" href={desktopHero} media="(min-width: 768px)" />
         <link rel="preload" as="image" href="/Details/St. Augustine Parish Church.jpg" />

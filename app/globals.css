@@ -21,6 +21,14 @@
   /* Muted/light surfaces: cream #F1EDE2 */
   --muted: #F1EDE2;
   --muted-foreground: oklch(0.145 0 0);
+  /* Cloud: light cream background #F1EDE2 */
+  --cloud: #F1EDE2;
+  /* Charcoal: dark text color */
+  --charcoal: oklch(0.145 0 0);
+  /* Birch: light accent for selection */
+  --birch: #AFC8E6;
+  /* Nut: dark accent for selection */
+  --nut: oklch(0.145 0 0);
   /* Accent: dusty pink #D8B0B0 */
   --accent: #D8B0B0;
   --accent-foreground: oklch(0.145 0 0);
@@ -101,6 +109,11 @@
   --color-sage: var(--sage);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  /* Added cloud, charcoal, birch, and nut colors to theme */
+  --color-cloud: var(--cloud);
+  --color-charcoal: var(--charcoal);
+  --color-birch: var(--birch);
+  --color-nut: var(--nut);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);

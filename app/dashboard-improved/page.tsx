@@ -14,7 +14,7 @@
 
 import { useState, useEffect } from "react"
 import { ImprovedGuestList, Guest } from "@/components/improved-guest-list"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/sections/ui/button"
 import {
   Lock,
   LogOut,

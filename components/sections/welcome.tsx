@@ -3,6 +3,7 @@
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
 import { Cormorant_Garamond } from "next/font/google"
+import { TornPaperEdge } from "@/components/torn-paper-edge"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -15,10 +16,12 @@ export function Welcome() {
   return (
     <Section
       id="welcome"
-      className="relative overflow-hidden bg-transparent py-12 sm:py-16 md:py-20"
+      className="relative overflow-hidden bg-[#FAF9F5] py-12 sm:py-16 md:py-20"
     >
+      {/* Torn paper edge at top */}
+      <TornPaperEdge position="top" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="relative overflow-hidden rounded-3xl sm:rounded-[2rem] border border-[#B9AACB]/70 bg-[#F4F4F4]/95 backdrop-blur-2xl shadow-[0_16px_60px_rgba(106,79,130,0.35)] px-5 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12">
+        <div className="relative overflow-hidden rounded-3xl sm:rounded-[2rem] border border-[#D0D0D0]/40 bg-[#FAF9F5]/98 backdrop-blur-2xl shadow-[0_16px_60px_rgba(0,0,0,0.08)] px-5 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12">
           {/* Layered glass + light accents for readability */}
           <div className="pointer-events-none absolute inset-0">
             {/* Solid primary background with slight transparency */}
@@ -36,33 +39,30 @@ export function Welcome() {
           </div>
 
           <div className="relative text-center space-y-6 sm:space-y-7 md:space-y-8">
-          {/* Main heading */}
+          {/* Main heading - Elegant light grey style */}
           <div className="space-y-1.5 sm:space-y-2.5">
             <p
-              className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#6A4F82]`}
-              style={{ textShadow: "0 1px 8px rgba(185,170,203,0.4)" }}
+              className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-[#8A8A8A]`}
             >
               {brideName} &amp; {groomName}
             </p>
             <h2
-              className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] text-[#6A4F82]"
-              style={{ textShadow: "0 3px 14px rgba(185,170,203,0.5)" }}
+              className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] text-[#9A9A9A]"
+              style={{ letterSpacing: "0.01em" }}
             >
               Welcome to our wedding website
             </h2>
 
 
-            {/* Verse */}
+            {/* Verse - Light grey elegant style */}
             <div className="space-y-1">
               <p
-                className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#6A4F82]/90 italic`}
-                style={{ textShadow: "0 1px 8px rgba(185,170,203,0.3)" }}
+                className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#8A8A8A] italic`}
               >
                 &quot;Love is patient, love is kind. It does not envy, it does not boast, it is not proud… It always protects, always trusts, always hopes, always perseveres.&quot;
               </p>
               <p
-                className={`${cormorant.className} text-[0.65rem] sm:text-xs md:text-sm text-[#6A4F82]/80 tracking-[0.2em] uppercase`}
-                style={{ textShadow: "0 1px 6px rgba(185,170,203,0.3)" }}
+                className={`${cormorant.className} text-[0.65rem] sm:text-xs md:text-sm text-[#8A8A8A]/80 tracking-[0.2em] uppercase`}
               >
                 1 Corinthians 13:4–7 (NIV)
               </p>
@@ -70,15 +70,15 @@ export function Welcome() {
 
             {/* Divider */}
             <div className="flex items-center justify-center gap-2 pt-1">
-              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#B9AACB]/40" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#A8AF8D] shadow-[0_0_14px_rgba(168,175,141,0.8)]" />
-              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#B9AACB]/40" />
+              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#9A9A9A]/40" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#9A9A9A]" />
+              <span className="h-px w-10 sm:w-16 md:w-20 bg-[#9A9A9A]/40" />
             </div>
           </div>
 
-          {/* Body text */}
+          {/* Body text - Light grey elegant style */}
           <div
-            className={`${cormorant.className} text-[0.85rem] sm:text-sm md:text-base leading-relaxed sm:leading-7 text-[#6A4F82] space-y-3 sm:space-y-4`}
+            className={`${cormorant.className} text-[0.85rem] sm:text-sm md:text-base leading-relaxed sm:leading-7 text-[#8A8A8A] space-y-3 sm:space-y-4`}
           >
             <p>
               We&apos;ve found a love that&apos;s a true blessing, and we give thanks to God for writing the
@@ -94,6 +94,9 @@ export function Welcome() {
           </div>
         </div>
       </div>
+
+      {/* Torn paper edge at bottom */}
+      <TornPaperEdge position="bottom" />
     </Section>
   )
 }

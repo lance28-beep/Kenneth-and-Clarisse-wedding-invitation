@@ -4,6 +4,7 @@ import { Suspense, useState, useCallback } from "react"
 import dynamic from "next/dynamic"
 import { AudioProvider } from "@/contexts/audio-context"
 import { Hero as MainHero } from "@/components/sections/hero"
+import { Invitation } from "@/components/sections/invitation"
 import { Welcome } from "@/components/sections/welcome"
 import { Countdown } from "@/components/sections/countdown"
 import { WeddingTimeline } from "@/components/sections/wedding-timeline"
@@ -22,6 +23,8 @@ import { Navbar } from "@/components/navbar"
 import { AppState } from "@/components/types"
 import BackgroundMusic from "@/components/background-music"
 import { SnapShare } from "@/components/sections/snap-share"
+import { Narrative } from "@/components/sections/narrative"
+import { Celebration } from "@/components/sections/celebration"
 
 const Silk = dynamic(() => import("@/components/silk"), { ssr: false })
 const GuestList = dynamic(() => import("@/components/sections/guest-list").then(mod => ({ default: mod.GuestList })), { ssr: false })
@@ -52,7 +55,7 @@ export default function Home() {
             {enableDecor && (
               <div className="fixed inset-0 z-0 pointer-events-none">
                 <Suspense fallback={<div className="w-full h-full bg-gradient-to-b from-primary/10 to-secondary/5" />}>
-                  <Silk speed={5} scale={1.1} color="#5B6B3C" noiseIntensity={0.8} rotation={0.3} />
+                  <Silk speed={5} scale={1.1} color="#FAF9F5" noiseIntensity={0.8} rotation={0.3} />
                 </Suspense>
               </div>
             )}
@@ -60,20 +63,24 @@ export default function Home() {
             <div className="relative z-10">
               {appState === AppState.DETAILS && <Navbar />}
               <MainHero />
-              <Welcome />
+              <Invitation />  
+              {/* <Welcome /> */}
               {/* <CoupleVideo /> */}
-              <Countdown />
+              <Narrative />
+              {/* <Countdown /> */}
               <Gallery />
               <Messages />
               <Details />
-              <WeddingTimeline />
+              {/* <WeddingTimeline /> */}
               <Entourage />
               <PrincipalSponsors />
+              <Celebration />
               <GuestList />
               <BookOfGuests />
-              <Registry />
+              {/* <Registry /> */}
               <FAQ />
               <SnapShare />
+              {/* <Invitation /> */}
               <Footer />
             </div>
           </div>

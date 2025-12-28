@@ -1,14 +1,14 @@
 export const siteConfig = {
   couple: {
-    bride: "Catherine Rivera",
-    brideNickname: "Catherine",
-    groom: "Mark Niño Cabral",
-    groomNickname: "Mark",
+    bride: "Clarisse Mae Arnan Reyes",
+    brideNickname: "Clarisse",
+    groom: "Kenneth Erwin Brucelo Jose",
+    groomNickname: "Kenneth",
   },
   wedding: {
-    date: "January 11, 2026",
-    time: "3:00 PM",
-    venue: "Lorenzo Farm and Resort and Events Place / Balai Alexandria Events Place",
+    date: "January 28, 2026",
+    time: "9:00 AM",
+    venue: "St. Benedict Parish / Infinity Tagaytay Events Place",
     tagline: "are getting married!",
     theme: "Purple & Sage Motif",
     motif: "#6A4F82, #B9AACB, #A8AF8D, #F4F4F4, #5B6B3C",
@@ -19,18 +19,18 @@ export const siteConfig = {
     },
   },
   ceremony: {
-    location: "Lorenzo Farm and Resort and Events Place, Brgy Dampulan Jaen Nueva Ecija",
-    venue: "Lorenzo Farm and Resort and Events Place",
-    date: "January 11, 2026",
-    day: "Sunday",
-    time: "3:00 PM",
-    entourageTime: "2:30 PM",
-    guestsTime: "2:30 PM",
+    location: "St. Benedict Parish, Ayala Westgrove, Silang, Cavite",
+    venue: "St. Benedict Parish",
+    date: "January 28, 2026",
+    day: "Wednesday",
+    time: "9:00 AM",
+    entourageTime: "8:30 AM",
+    guestsTime: "8:30 AM",
   },
   reception: {
-    location: "Balai Alexandria Events Place, Brgy Dampulan Jaen Nueva Ecija",
-    venue: "Balai Alexandria Events Place",
-    date: "January 11, 2026",
+    location: "Infinity Tagaytay Events Place, Lourdes St. Maitim 2nd Central, Tagaytay City, Cavite",
+    venue: "Infinity Tagaytay Events Place",
+    date: "January 28, 2026",
     time: "Reception to follow",
   },
   dressCode: {
@@ -47,16 +47,20 @@ export const siteConfig = {
     note: "We kindly request our guests to dress in formal attire with a color of our motif."
   },
   narratives: {
-    groom: `The first time Mark saw Catherine, time seemed to slow down. It was an ordinary day that instantly became unforgettable: one smile, one hello, and suddenly his world had a new center. He didn't have the perfect words ready, but he knew he had met someone who felt like home.
+    groom: `Kej and Macy met as block mates during their third year of college — just strangers sharing the same class schedules.
 
-Early conversations turned into late-night talks, sharing dreams, favorite meals, and whispered prayers for a future together. With every small adventure—coffee runs, long drives, quiet walks—Mark found himself choosing her over and over again. He loved how she laughed freely, how she listened with her whole heart, and how her faith steadied him.
+At first, they bonded over group projects, shared deadlines, and long walks between buildings. Friendship came naturally: late-night classes, bonded over long vacant hours, and the comfort of knowing someone always had their back.
 
-There were seasons of distance and long workdays, but every reunion reminded him why he stayed patient: because Catherine was worth every mile and every minute apart. When he finally knelt to ask for her hand, it wasn't a question of "if," only "when can we start forever?"`,
-    bride: `Catherine remembers the first time Mark said her name. It was gentle but sure, a kindness that made her feel both seen and safe. In that softness, she found a partner who met her with the same grace she prayed to give.
+But somewhere between laughter and quiet moments, something shifted. A lingering glance during classes, a heartbeat that raced a little faster after a casual touch, a sudden awareness that this person — this friend — felt like home.
 
-Mark's steadiness won her heart: the way he showed up, even when schedules were tight, and how he always found lightness in the small things. He celebrated her wins, held space for her worries, and never hesitated to choose "us" in every decision.
+Without planning it, they fell in love. What started as two block mates became two inseparable friends. And eventually, became two lovers who realized that the best relationships begin with friendship, built slowly, beautifully, and unexpectedly.`,
+    bride: `Kej and Macy met as block mates during their third year of college — just strangers sharing the same class schedules.
 
-Now, as they prepare to say yes before God and the people they love most, Catherine is grateful for the patience, humor, and hope Mark brings to every day. She knows this next chapter is just the start of the love story they get to write together.`,
+At first, they bonded over group projects, shared deadlines, and long walks between buildings. Friendship came naturally: late-night classes, bonded over long vacant hours, and the comfort of knowing someone always had their back.
+
+But somewhere between laughter and quiet moments, something shifted. A lingering glance during classes, a heartbeat that raced a little faster after a casual touch, a sudden awareness that this person — this friend — felt like home.
+
+Without planning it, they fell in love. What started as two block mates became two inseparable friends. And eventually, became two lovers who realized that the best relationships begin with friendship, built slowly, beautifully, and unexpectedly.`,
   },
   colors: {
     primary: "#6A4F82",
@@ -64,7 +68,7 @@ Now, as they prepare to say yes before God and the people they love most, Cather
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1gFI7Q-1J85w2gwOQ-Ugkakeei2poqBM8?usp=sharing",
-    hashtag: "#CatherineAndMark2026",
+    hashtag: "#KennethAndClarisse2026",
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

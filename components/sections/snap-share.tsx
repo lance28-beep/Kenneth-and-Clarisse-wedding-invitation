@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-import { motion } from "motion/react"
 import { Instagram, Facebook, Twitter, Share2, Copy, Download, Check } from "lucide-react"
 import { Section } from "@/components/section"
 import { QRCodeCanvas } from "qrcode.react"
 import { siteConfig } from "@/content/site"
 import { Cormorant_Garamond } from "next/font/google"
+import { TornPaperEdge } from "@/components/torn-paper-edge"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ export function SnapShare() {
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const driveLink = siteConfig.snapShare?.googleDriveLink || ""
+  const driveLink = siteConfig.snapShare?.googleDriveLink || "https://drive.google.com/drive/folders/1kOrf64ay6vx0pIeIjavvWp31B8nFWowQ?usp=sharing"
   const hashtags = [
     "#TodaysMarkMyLifetimewithCath",
     "#IWillMARKYouForeverCATH",
@@ -114,299 +114,369 @@ export function SnapShare() {
     }
   }
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 },
-  }
-
-  const staggerChildren = {
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
   return (
     <Section
       id="snap-share"
-      className="relative overflow-hidden py-8 sm:py-16 md:py-20 lg:py-24 bg-transparent"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-[#FAF9F5]"
     >
-      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 md:px-8">
-        <motion.div
-          className="text-center mb-5 sm:mb-10"
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-[10px] sm:text-xs tracking-[0.3em] uppercase text-white">
-            Share Your Memories
-          </div>
-          <h2
-            className="style-script-regular text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,0,25,0.8)] mt-2 sm:mt-4"
+      {/* Torn paper edge at top */}
+      <TornPaperEdge position="top" />
+      
+      {/* Paper texture background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Subtle paper texture effect */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+        }} />
+        {/* Soft sage green accents */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 
+            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e] mb-2"
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            }}
           >
             Capture & Share the Celebration
           </h2>
-          <p className={`${cormorant.className} text-xs sm:text-sm md:text-base text-white/90 max-w-2xl mx-auto mt-2 sm:mt-4 leading-relaxed px-2`}>
+          <p 
+            className={`${cormorant.className} text-sm sm:text-base text-[#4a5d4e]/85 max-w-2xl mx-auto mt-4 leading-relaxed font-light`}
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+            }}
+          >
             Capture the beautiful moments of {groomNickname} & {brideNickname}'s wedding day. Share your favorite memories so our keepsake gallery glows with every smile, embrace, and celebration from this special day.
           </p>
-          <div className="mx-auto mt-3 sm:mt-5 h-px w-20 sm:w-24 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-        </motion.div>
+        </div>
 
-        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-6 lg:gap-10" variants={staggerChildren} initial="initial" animate="animate">
-          <motion.div
-            className="p-[1.5px] rounded-xl sm:rounded-[22px] bg-gradient-to-br from-[#B9AACB]/50 via-[#6A4F82]/30 to-[#B9AACB]/50 h-full lg:order-1"
-            variants={fadeInUp}
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="bg-gradient-to-br from-[#B9AACB] to-[#6A4F82] rounded-lg sm:rounded-[20px] p-3 sm:p-5 md:p-8 shadow-xl border border-[#B9AACB]/40 h-full flex flex-col justify-start">
-              <div className="flex flex-col w-full">
-                <h4 className={`${cormorant.className} text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white mb-2 sm:mb-4 text-center`}>
-                  Our Favorite Moments
-                </h4>
-                <div className="grid grid-cols-2 gap-1.5 sm:gap-3 md:gap-4">
-                  <motion.div
-                    className="relative aspect-square rounded-lg sm:rounded-xl overflow-hidden shadow-md border-2 border-white/30 hover:border-white/50 transition-all"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/mobile-background/couple (7).jpg" alt="Wedding moment 1" fill className="object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="relative aspect-square rounded-lg sm:rounded-xl overflow-hidden shadow-md border-2 border-white/30 hover:border-white/50 transition-all"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/mobile-background/couple (3).jpg" alt="Wedding moment 2" fill className="object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="relative col-span-2 aspect-[3/2] rounded-lg sm:rounded-xl overflow-hidden shadow-md border-2 border-white/30 hover:border-white/50 transition-all"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/desktop-background/couple (2).jpg" alt="Wedding moment 3" fill className="object-cover" />
-                  </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {/* Gallery Section */}
+          <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
+            <div className="p-4 sm:p-5 md:p-6 lg:p-8">
+              <h3 
+                className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-4 sm:mb-6 text-center font-light`}
+                style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
+              >
+                Our Favorite Moments
+              </h3>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="relative aspect-square rounded-lg overflow-hidden shadow-md border border-[#4a5d4e]/20 hover:border-[#4a5d4e]/40 transition-all">
+                  <Image src="/desktop-background/couple (5).jpeg" alt="Wedding moment 1" fill className="object-cover" />
                 </div>
-                <p className={`${cormorant.className} text-white text-xs sm:text-sm text-center mt-3 sm:mt-5 px-1.5 leading-relaxed`}>
-                  Share your snapshots to be featured in our keepsake gallery.
-                </p>
+                <div className="relative aspect-square rounded-lg overflow-hidden shadow-md border border-[#4a5d4e]/20 hover:border-[#4a5d4e]/40 transition-all">
+                  <Image src="/desktop-background/couple (6).jpeg" alt="Wedding moment 2" fill className="object-cover" />
+                </div>
+                <div className="relative col-span-2 aspect-[3/2] rounded-lg overflow-hidden shadow-md border border-[#4a5d4e]/20 hover:border-[#4a5d4e]/40 transition-all">
+                  <Image src="/desktop-background/couple (1).jpeg" alt="Wedding moment 3" fill className="object-cover" />
+                </div>
               </div>
+              <p 
+                className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base text-center mt-4 sm:mt-6 leading-relaxed font-light`}
+                style={{ 
+                  letterSpacing: "0.02em",
+                  textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                }}
+              >
+                Share your snapshots to be featured in our keepsake gallery.
+              </p>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div className="space-y-3 sm:space-y-5 lg:space-y-6 h-full flex flex-col lg:order-2" variants={fadeInUp}>
-            <div className="p-[1.5px] rounded-xl sm:rounded-[22px] bg-gradient-to-br from-[#B9AACB]/50 via-[#6A4F82]/30 to-[#B9AACB]/50 flex-1">
-              <div className="bg-gradient-to-br from-[#B9AACB] to-[#6A4F82] rounded-lg sm:rounded-[20px] p-3 sm:p-5 md:p-8 shadow-xl border border-[#B9AACB]/40 text-center h-full flex flex-col">
-                <h4 className={`${cormorant.className} text-base sm:text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3`}>
+          <div className="space-y-6 sm:space-y-8">
+            {/* Share Website Section */}
+            <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
+              <div className="p-4 sm:p-5 md:p-6 lg:p-8 text-center">
+                <h3 
+                  className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 font-light`}
+                  style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
+                >
                   Share Our Wedding Website
-                </h4>
-                <p className={`${cormorant.className} text-white text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed px-1`}>
+                </h3>
+                <p 
+                  className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed font-light`}
+                  style={{ 
+                    letterSpacing: "0.02em",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                  }}
+                >
                   Spread the word about {groomNickname} & {brideNickname}'s wedding celebration. Share this QR code with friends and family so they can join the celebration.
                 </p>
-                <div className="mx-auto inline-flex flex-col items-center bg-white/90 backdrop-blur-sm p-2.5 sm:p-5 md:p-7 rounded-xl sm:rounded-2xl shadow-md border border-[#B9AACB]/40 mb-3 sm:mb-4 flex-1 justify-center">
-                  <div className="mb-2 sm:mb-3 p-1.5 sm:p-3 rounded-lg sm:rounded-xl bg-white border border-[#B9AACB]/30">
-                    <div className="bg-white p-1.5 sm:p-3 rounded-lg shadow-sm border border-[#B9AACB]/30">
-                      <QRCodeCanvas 
-                        id="snapshare-qr" 
-                        value={websiteUrl} 
-                        size={isMobile ? 140 : 220} 
-                        includeMargin 
-                        className="bg-white" 
-                      />
-                    </div>
+                <div className="mx-auto inline-flex flex-col items-center bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-[#4a5d4e]/30 mb-4 sm:mb-6">
+                  <div className="mb-3 p-3 rounded-lg bg-white border border-[#4a5d4e]/30">
+                    <QRCodeCanvas 
+                      id="snapshare-qr" 
+                      value={websiteUrl} 
+                      size={isMobile ? 140 : 180} 
+                      includeMargin 
+                      className="bg-white" 
+                      fgColor="#4a5d4e"
+                      bgColor="#FFFFFF"
+                    />
                   </div>
                   <button
                     onClick={downloadQRCode}
-                    className="flex items-center gap-1.5 sm:gap-2 mx-auto px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-white text-[#6A4F82] border border-[#B9AACB]/40 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-[#F4F4F4] transition-all duration-200 text-xs sm:text-sm font-semibold"
+                    className={`${cormorant.className} flex items-center gap-2 mx-auto px-4 py-2 rounded-sm bg-[#4a5d4e] text-white hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                   >
-                    <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    <span className={`${cormorant.className} tracking-[0.15em] sm:tracking-[0.18em] uppercase font-medium`}>Download QR</span>
+                    <Download className="w-4 h-4" />
+                    <span>Download QR</span>
                   </button>
                 </div>
-                <p className={`${cormorant.className} text-white text-xs sm:text-sm mt-auto leading-relaxed`}>
+                <p 
+                  className={`${cormorant.className} text-[#4a5d4e]/85 text-xs sm:text-sm leading-relaxed font-light`}
+                  style={{ 
+                    letterSpacing: "0.02em",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                  }}
+                >
                   Scan with any camera app to open the full invitation and schedule.
                 </p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#B9AACB] to-[#6A4F82] rounded-lg sm:rounded-[20px] p-3 sm:p-5 md:p-7 shadow-xl border border-[#B9AACB]/40">
-              <h5 className={`${cormorant.className} text-base sm:text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3 text-center`}>
-                Use Our Hashtags
-              </h5>
-              <p className={`${cormorant.className} text-white text-xs sm:text-sm text-center mb-3 sm:mb-4 leading-relaxed`}>
-                Tag your photos and posts with our wedding hashtags to join the celebration!
-              </p>
-              
-              <div className="space-y-2.5 sm:space-y-3 mb-3 sm:mb-4">
-                {hashtags.map((hashtag, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-[#B9AACB]/40 shadow-sm hover:shadow-md transition-all duration-200"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
-                      <span className={`${cormorant.className} text-[#6A4F82] font-bold text-sm sm:text-base md:text-lg break-all flex-1 text-center sm:text-left`}>
-                        {hashtag}
-                      </span>
-                      <button
-                        onClick={() => copyHashtag(hashtag, index)}
-                        className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-gradient-to-r from-[#6A4F82] to-[#B9AACB] text-white transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105 border border-[#6A4F82]/50 whitespace-nowrap flex-shrink-0 ${
-                          copiedHashtagIndex === index ? "bg-green-600 from-green-600 to-green-500" : ""
-                        }`}
-                      >
-                        {copiedHashtagIndex === index ? (
-                          <>
-                            <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                            <span className={`${cormorant.className} text-xs sm:text-sm font-medium`}>Copied!</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                            <span className={`${cormorant.className} text-xs sm:text-sm font-medium`}>Copy</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <button
-                onClick={copyAllHashtags}
-                className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-lg bg-white/20 backdrop-blur-sm text-white border-2 border-white/40 transition-all duration-200 shadow-md hover:shadow-lg hover:bg-white/30 hover:border-white/60 ${
-                  copiedAllHashtags ? "bg-green-500/30 border-green-400/60" : ""
-                }`}
-              >
-                {copiedAllHashtags ? (
-                  <>
-                    <Check className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className={`${cormorant.className} text-xs sm:text-sm font-semibold uppercase tracking-[0.15em]`}>All Copied!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className={`${cormorant.className} text-xs sm:text-sm font-semibold uppercase tracking-[0.15em]`}>Copy All Hashtags</span>
-                  </>
-                )}
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#B9AACB] to-[#6A4F82] rounded-lg sm:rounded-[20px] p-3 sm:p-5 md:p-7 shadow-xl border border-[#B9AACB]/40">
-              <h5 className={`${cormorant.className} text-base sm:text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3 text-center`}>
-                Share on Social Media
-              </h5>
-              <p className={`${cormorant.className} text-white text-xs sm:text-sm text-center mb-3 sm:mb-4 leading-relaxed`}>
-                Help spread the word about {groomNickname} & {brideNickname}'s wedding celebration. Share the event across your favorite platforms.
-              </p>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
-                <button
-                  onClick={() => shareOnSocial("instagram")}
-                  className="group flex items-center justify-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm text-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg hover:bg-white/30 transition-all duration-200 shadow-md hover:shadow-lg border border-white/30"
+            {/* Hashtags Section */}
+            <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
+              <div className="p-4 sm:p-5 md:p-6 lg:p-8">
+                <h3 
+                  className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 text-center font-light`}
+                  style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
                 >
-                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span className={`${cormorant.className} font-medium text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em]`}>Instagram</span>
-                </button>
-                <button
-                  onClick={() => shareOnSocial("facebook")}
-                  className="group flex items-center justify-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm text-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg hover:bg-white/30 transition-all duration-200 shadow-md hover:shadow-lg border border-white/30"
+                  Use Our Hashtags
+                </h3>
+                <p 
+                  className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base text-center mb-4 sm:mb-6 leading-relaxed font-light`}
+                  style={{ 
+                    letterSpacing: "0.02em",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                  }}
                 >
-                  <Facebook className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span className={`${cormorant.className} font-medium text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em]`}>Facebook</span>
-                </button>
-                <button
-                  onClick={() => shareOnSocial("tiktok")}
-                  className="group flex items-center justify-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm text-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg hover:bg-white/30 transition-all duration-200 shadow-md hover:shadow-lg border border-white/30"
-                >
-                  <Share2 className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span className={`${cormorant.className} font-medium text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em]`}>TikTok</span>
-                </button>
-                <button
-                  onClick={() => shareOnSocial("twitter")}
-                  className="group flex items-center justify-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm text-white px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg hover:bg-white/30 transition-all duration-200 shadow-md hover:shadow-lg border border-white/30"
-                >
-                  <Twitter className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span className={`${cormorant.className} font-medium text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em]`}>Twitter</span>
-                </button>
-              </div>
-            </div>
-
-            {driveLink && (
-              <div className="p-[1.5px] rounded-xl sm:rounded-[22px] bg-gradient-to-br from-[#B9AACB]/50 via-[#6A4F82]/30 to-[#B9AACB]/50">
-                <div className="bg-gradient-to-br from-[#B9AACB] to-[#6A4F82] rounded-lg sm:rounded-[20px] p-3 sm:p-5 md:p-7 shadow-xl border border-[#B9AACB]/40 text-center">
-                  <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/30 bg-white/20 backdrop-blur-sm px-2.5 py-1 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.32em] text-white mb-2 sm:mb-3">
-                    Upload Your Photos & Videos
-                  </div>
-                  <p className={`${cormorant.className} text-white text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 px-1`}>
-                    Help us capture our special day! Scan the QR or use the actions below to drop your clips into our shared Drive.
-                  </p>
-                  <div className="mx-auto inline-flex flex-col items-center bg-white/90 backdrop-blur-sm p-2.5 sm:p-5 rounded-xl sm:rounded-2xl shadow-md border border-[#B9AACB]/40 mb-3 sm:mb-4">
-                    <div className="mb-2 sm:mb-3 p-1.5 sm:p-3 rounded-lg sm:rounded-xl bg-white border border-[#B9AACB]/30">
-                      <div className="bg-white p-1.5 sm:p-3 rounded-lg shadow-sm border border-[#B9AACB]/30">
-                        <QRCodeCanvas id="drive-qr" value={driveLink} size={isMobile ? 130 : 200} includeMargin className="bg-white" />
+                  Tag your photos and posts with our wedding hashtags to join the celebration!
+                </p>
+                
+                <div className="space-y-3 mb-4 sm:mb-6">
+                  {hashtags.map((hashtag, index) => (
+                    <div
+                      key={index}
+                      className="bg-white/50 rounded-lg p-3 sm:p-4 border border-[#D0D0D0]/40 hover:border-[#4a5d4e]/60 hover:bg-white/70 transition-all duration-300 shadow-sm"
+                    >
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <span className={`${cormorant.className} text-[#4a5d4e] font-semibold text-sm sm:text-base break-all flex-1 text-center sm:text-left`}>
+                          {hashtag}
+                        </span>
+                        <button
+                          onClick={() => copyHashtag(hashtag, index)}
+                          className={`${cormorant.className} flex items-center gap-2 px-4 py-2 rounded-sm bg-[#4a5d4e] text-white hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm whitespace-nowrap flex-shrink-0 ${
+                            copiedHashtagIndex === index ? "bg-green-600 hover:bg-green-700" : ""
+                          }`}
+                        >
+                          {copiedHashtagIndex === index ? (
+                            <>
+                              <Check className="w-4 h-4" />
+                              <span>Copied!</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-4 h-4" />
+                              <span>Copy</span>
+                            </>
+                          )}
+                        </button>
                       </div>
                     </div>
-                    <p className={`${cormorant.className} text-[#6A4F82] text-xs sm:text-sm`}>📱 Scan with your camera app</p>
+                  ))}
+                </div>
+
+                <button
+                  onClick={copyAllHashtags}
+                  className={`${cormorant.className} w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm border border-[#4a5d4e]/30 text-[#4a5d4e] hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm ${
+                    copiedAllHashtags ? "bg-green-50 border-green-300 text-green-700" : ""
+                  }`}
+                >
+                  {copiedAllHashtags ? (
+                    <>
+                      <Check className="w-4 h-4" />
+                      <span>All Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      <span>Copy All Hashtags</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Social Media Section */}
+            <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
+              <div className="p-4 sm:p-5 md:p-6 lg:p-8">
+                <h3 
+                  className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 text-center font-light`}
+                  style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
+                >
+                  Share on Social Media
+                </h3>
+                <p 
+                  className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base text-center mb-4 sm:mb-6 leading-relaxed font-light`}
+                  style={{ 
+                    letterSpacing: "0.02em",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                  }}
+                >
+                  Help spread the word about {groomNickname} & {brideNickname}'s wedding celebration. Share the event across your favorite platforms.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => shareOnSocial("instagram")}
+                    className={`${cormorant.className} flex items-center justify-center gap-2 bg-[#4a5d4e] text-white px-4 py-2.5 rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                  >
+                    <Instagram className="w-4 h-4" />
+                    <span>Instagram</span>
+                  </button>
+                  <button
+                    onClick={() => shareOnSocial("facebook")}
+                    className={`${cormorant.className} flex items-center justify-center gap-2 bg-[#4a5d4e] text-white px-4 py-2.5 rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                  >
+                    <Facebook className="w-4 h-4" />
+                    <span>Facebook</span>
+                  </button>
+                  <button
+                    onClick={() => shareOnSocial("tiktok")}
+                    className={`${cormorant.className} flex items-center justify-center gap-2 bg-[#4a5d4e] text-white px-4 py-2.5 rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                  >
+                    <Share2 className="w-4 h-4" />
+                    <span>TikTok</span>
+                  </button>
+                  <button
+                    onClick={() => shareOnSocial("twitter")}
+                    className={`${cormorant.className} flex items-center justify-center gap-2 bg-[#4a5d4e] text-white px-4 py-2.5 rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                  >
+                    <Twitter className="w-4 h-4" />
+                    <span>Twitter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Drive Section */}
+            {driveLink && (
+              <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
+                <div className="p-4 sm:p-5 md:p-6 lg:p-8 text-center">
+                  <h3 
+                    className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 font-light`}
+                    style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
+                  >
+                    Upload Your Photos & Videos
+                  </h3>
+                  <p 
+                    className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 font-light`}
+                    style={{ 
+                      letterSpacing: "0.02em",
+                      textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                    }}
+                  >
+                    Help us capture our special day! Scan the QR or use the actions below to drop your clips into our shared Drive.
+                  </p>
+                  <div className="mx-auto inline-flex flex-col items-center bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-[#4a5d4e]/30 mb-4 sm:mb-6">
+                    <div className="mb-3 p-3 rounded-lg bg-white border border-[#4a5d4e]/30">
+                      <QRCodeCanvas 
+                        id="drive-qr" 
+                        value={driveLink || "https://drive.google.com/drive/folders/1kOrf64ay6vx0pIeIjavvWp31B8nFWowQ?usp=sharing"} 
+                        size={isMobile ? 130 : 180} 
+                        includeMargin 
+                        className="bg-white" 
+                        fgColor="#4a5d4e"
+                        bgColor="#FFFFFF"
+                      />
+                    </div>
+                    <p className={`${cormorant.className} text-[#4a5d4e] text-xs sm:text-sm`}>📱 Scan with your camera app</p>
                   </div>
-                  <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
+                  <div className="flex flex-col sm:flex-row justify-center gap-3">
                     <button
                       onClick={copyDriveLink}
-                      className={`flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-white text-[#6A4F82] border border-[#B9AACB]/40 shadow-sm hover:shadow-md hover:bg-[#F4F4F4] text-xs sm:text-sm transition-all ${
-                        copiedDriveLink ? "bg-green-100 border-green-300" : ""
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 rounded-sm border border-[#4a5d4e]/30 text-[#4a5d4e] hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm ${
+                        copiedDriveLink ? "bg-green-50 border-green-300 text-green-700" : ""
                       }`}
                     >
                       {copiedDriveLink ? (
                         <>
-                          <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                          <span className={`${cormorant.className} tracking-[0.15em] sm:tracking-[0.18em] uppercase font-medium`}>Copied!</span>
+                          <Check className="w-4 h-4" />
+                          <span>Copied!</span>
                         </>
                       ) : (
                         <>
-                          <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                          <span className={`${cormorant.className} tracking-[0.15em] sm:tracking-[0.18em] uppercase font-medium`}>Copy Link</span>
+                          <Copy className="w-4 h-4" />
+                          <span>Copy Link</span>
                         </>
                       )}
                     </button>
                     <button
                       onClick={downloadDriveQRCode}
-                      className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-white text-[#6A4F82] border border-[#B9AACB]/40 shadow-sm hover:shadow-md hover:bg-[#F4F4F4] text-xs sm:text-sm transition-all font-semibold"
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 rounded-sm bg-[#4a5d4e] text-white hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                     >
-                      <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                      <span className={`${cormorant.className} tracking-[0.15em] sm:tracking-[0.18em] uppercase font-medium`}>Download QR</span>
+                      <Download className="w-4 h-4" />
+                      <span>Download QR</span>
                     </button>
                     <a
-                      href={driveLink}
+                      href={driveLink || "https://drive.google.com/drive/folders/1kOrf64ay6vx0pIeIjavvWp31B8nFWowQ?usp=sharing"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-white/20 backdrop-blur-sm text-white border border-white/30 shadow-sm hover:shadow-md hover:bg-white/30 text-xs sm:text-sm transition-all"
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 rounded-sm border border-[#4a5d4e]/30 text-[#4a5d4e] hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
                     >
-                      <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                      <span className={`${cormorant.className} tracking-[0.15em] sm:tracking-[0.18em] uppercase font-medium`}>Open Drive</span>
+                      <Share2 className="w-4 h-4" />
+                      <span>Open Drive</span>
                     </a>
                   </div>
-                  <p className={`${cormorant.className} text-white text-xs sm:text-sm mt-2 sm:mt-3 leading-relaxed`}>or tap "Open Google Drive Folder."</p>
+                  <p 
+                    className={`${cormorant.className} text-[#4a5d4e]/85 text-xs sm:text-sm mt-3 leading-relaxed font-light`}
+                    style={{ 
+                      letterSpacing: "0.02em",
+                      textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                    }}
+                  >
+                    or tap "Open Drive" to access the Google Drive folder.
+                  </p>
                 </div>
               </div>
             )}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <motion.div className="text-center mt-5 sm:mt-10" variants={fadeInUp}>
-          <div className="bg-white/10 rounded-xl sm:rounded-[22px] p-4 sm:p-6 md:p-7 shadow-[0_25px_80px_rgba(0,0,0,0.35)] border border-white/20 max-w-3xl mx-auto backdrop-blur-xl">
-            <p className={`${cormorant.className} text-white text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4 px-2`}>
+        {/* Footer Message */}
+        <div className="text-center mt-8 sm:mt-10 md:mt-12">
+          <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md p-6 sm:p-8 max-w-3xl mx-auto">
+            <p 
+              className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base leading-relaxed mb-4 font-light`}
+              style={{ 
+                letterSpacing: "0.02em",
+                textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+              }}
+            >
               Thank you for helping make {groomNickname} & {brideNickname}'s wedding celebration memorable. Your photos and messages create beautiful memories
               that will last a lifetime—keep sharing the joy throughout the evening.
             </p>
-            <div className={`${cormorant.className} flex items-center justify-center gap-2 text-white text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.32em] uppercase`}>
-              <span>See you in the celebration</span>
+            <div 
+              className={`${cormorant.className} text-[#4a5d4e] text-xs sm:text-sm font-light`}
+              style={{ 
+                letterSpacing: "0.02em",
+                textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+              }}
+            >
+              See you in the celebration
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
+
+      {/* Torn paper edge at bottom */}
+      <TornPaperEdge position="bottom" />
     </Section>
   )
 }

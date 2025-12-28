@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Plus, Search, Trash2, Edit2, Star, CheckCircle, XCircle, Clock, Users as UsersIcon, Download, RefreshCw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/sections/ui/button';
 
 // Types
 export type GuestStatus = 'pending' | 'confirmed' | 'declined' | 'request';

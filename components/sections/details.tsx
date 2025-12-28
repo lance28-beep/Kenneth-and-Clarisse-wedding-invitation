@@ -1,51 +1,41 @@
 "use client"
 
+import React, { useState } from "react"
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
-import {
-  Clock,
-  Utensils,
-  Car,
-  Copy,
-  Check,
-  Navigation,
-  Heart,
-  Camera,
-  X,
-  MapPin,
-} from "lucide-react"
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import { TornPaperEdge } from "@/components/torn-paper-edge"
 import { Cormorant_Garamond } from "next/font/google"
+import { QRCodeSVG } from "qrcode.react"
+import { Navigation, Copy, Check } from "lucide-react"
+import Image from "next/image"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400"],
 })
 
+const timelineEvents = [
+  { label: "ARRIVAL", image: "/timeline/GuestArrival.png" },
+  { label: "CEREMONY", image: "/timeline/Wedding Ceremony.png", time: siteConfig.ceremony.time },
+  { label: "PHOTOS", image: "/timeline/PhotoTaking.png" },
+  { label: "PICA-PICA", image: "/timeline/peca peca.png" },
+  { label: "LUNCH", image: "/timeline/lunch.png" },
+  { label: "SEND-OFF", image: "/timeline/Send-off.png" },
+]
+
+// Color palette for attire section
+const attireColors = ["#E6D9F2", "#D4E6F1", "#FFE5E8", "#D4E6F1", "#FFE5E8"]
+
 export function Details() {
   const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set())
-  const [showImageModal, setShowImageModal] = useState<string | null>(null)
   const ceremonyLocation = siteConfig.ceremony.location
   const receptionLocation = siteConfig.reception.location
+  const ceremonyMapsLink = `https://maps.google.com/?q=${encodeURIComponent(ceremonyLocation)}`
+  const receptionMapsLink = `https://maps.google.com/?q=${encodeURIComponent(receptionLocation)}`
 
-  // Handle ESC key to close modal
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && showImageModal) {
-        setShowImageModal(null)
-      }
-    }
-
-    if (showImageModal) {
-      document.addEventListener("keydown", handleEscape)
-      document.body.style.overflow = "hidden"
-    }
-    return () => {
-      document.removeEventListener("keydown", handleEscape)
-      document.body.style.overflow = "unset"
-    }
-  }, [showImageModal])
+  const openInMaps = (link: string) => {
+    window.open(link, "_blank", "noopener,noreferrer")
+  }
 
   const copyToClipboard = async (text: string, itemId: string) => {
     try {
@@ -63,600 +53,342 @@ export function Details() {
     }
   }
 
-  // Generate Google Maps links
-  const ceremonyMapsLink = `https://maps.google.com/?q=${encodeURIComponent(siteConfig.ceremony.location)}`
-  const receptionMapsLink = `https://maps.google.com/?q=${encodeURIComponent(siteConfig.reception.location)}`
-
-  // Palettes (used only for color chips in attire card) - Purple & Lilac motif
-  const sponsorPalette = ["#6A4F82", "#B9AACB", "#A8AF8D"]
-  const guestPalette = ["#AB7CB0", "#D4A6D4", "#CBE0FF", "#FFC4C3", "#FFE2E6"]
-  const secondaryPalette = ["#B9AACB", "#F4F4F4", "#A8AF8D", "#6A4F82", "#5B6B3C"]
-
-  const openInMaps = (link: string) => {
-    window.open(link, "_blank", "noopener,noreferrer")
-  }
-
   return (
     <Section
       id="details"
-      className="relative py-12 md:py-16 lg:py-20 overflow-hidden bg-[#6A4F82]"
+      className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-[#FAF9F5]"
     >
-      {/* Background elements with purple & lilac motif */}
+      {/* Torn paper edge at top */}
+      <TornPaperEdge position="top" />
+      {/* Simple paper texture background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Subtle gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#6A4F82]/85 via-[#B9AACB]/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#6A4F82]/90 via-[#B9AACB]/55 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(185,170,203,0.22),transparent_55%)] opacity-80" />
+        {/* Subtle paper texture effect */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px),
+                          repeating-linear-gradient(90deg, transparent, transparent 2px, #4a5d4e 2px, #4a5d4e 4px)`,
+        }} />
+        {/* Soft sage green accents */}
+        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#4a5d4e]/5 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#4a5d4e]/5 via-transparent to-transparent" />
       </div>
 
-      {/* Header */}
-      <div className="relative z-30 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
-        {/* Small label */}
-        <p
-          className={`${cormorant.className} text-[0.7rem] sm:text-xs md:text-sm uppercase tracking-[0.28em] text-white mb-2`}
-          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.75)" }}
-        >
-          Ceremony & Reception Details
-        </p>
-
-        <h2
-          className="style-script-regular text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-1.5 sm:mb-3 md:mb-4"
-          style={{ textShadow: "0 4px 18px rgba(0,0,0,0.9)" }}
-        >
-          Details
-        </h2>
-
-        <p className="text-[11px] sm:text-sm md:text-base lg:text-lg text-white/95 max-w-xl mx-auto leading-relaxed px-2">
-          Everything you need to join us as we say&nbsp;
-          <span className="font-semibold text-white">“I do.”</span>
-        </p>
-
-        {/* Simple divider */}
-        <div className="flex items-center justify-center gap-2 mt-3 sm:mt-4">
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-          <div className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_12px_rgba(255,255,255,0.7)]" />
-          <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-l from-transparent via-white/60 to-transparent" />
-        </div>
-      </div>
-
-      {/* Ceremony & Reception Locations (separate cards) */}
-      <div className="relative z-10 mb-4 sm:mb-8 max-w-6xl mx-auto px-3 sm:px-5 space-y-3 sm:space-y-4">
-        <div className="text-center text-white/90">
-          <p className="text-[10px] sm:text-xs tracking-[0.3em] uppercase">
-            Ceremony &amp; Reception Location
-          </p>
-          <p className="text-sm sm:text-base md:text-lg font-semibold">
-            {ceremonyLocation} • {receptionLocation}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
-          {[
-            {
-              key: "ceremony",
-              label: "Ceremony",
-              venue: siteConfig.ceremony.venue,
-              location: siteConfig.ceremony.location,
-              date: siteConfig.ceremony.date,
-              time: siteConfig.ceremony.time,
-              mapLink: ceremonyMapsLink,
-              gradient: "from-[#6A4F82] via-[#B9AACB] to-[#F4F4F4]",
-              image: "/Details/Lorenzo Farm and Resort and events Place.jpg",
-            },
-            {
-              key: "reception",
-              label: "Reception",
-              venue: siteConfig.reception.venue,
-              location: siteConfig.reception.location,
-              date: siteConfig.reception.date,
-              time: siteConfig.reception.time,
-              mapLink: receptionMapsLink,
-              gradient: "from-[#B9AACB] via-[#A8AF8D] to-[#F4F4F4]",
-              image: "/Details/Balai Alexandria Events Place Brgy Dampulan Jaen Nueva Ecija.jpg",
-            },
-          ].map((info) => (
-            <div
-              key={info.key}
-              className="overflow-hidden rounded-xl sm:rounded-2xl border border-[#F0F0EE]/25 bg-gradient-to-b shadow-[0_20px_60px_rgba(0,0,0,0.45)] transition-transform duration-500 group hover:scale-[1.01]"
-              style={{ backgroundImage: undefined }}
-            >
-              {/* Top image */}
-              <div className="relative h-52 sm:h-64 md:h-72 w-full">
-                <Image
-                  src={info.image}
-                  alt={info.location}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                  priority
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#6A4F82]/95 via-[#B9AACB]/65 to-transparent`} />
-                <div className="absolute inset-0 flex flex-col justify-end px-3 sm:px-6 pb-3 sm:pb-6 text-white">
-                  <p className="style-script-regular text-xl sm:text-2xl md:text-3xl font-normal leading-none drop-shadow-md">
-                    {info.label}
-                  </p>
-                  <h3 className="style-script-regular text-2xl sm:text-4xl font-normal leading-tight drop-shadow-lg">
-                    {info.venue}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Details panel */}
-              <div className="bg-[#F4F4F4]/95 text-[#6A4F82] px-3 sm:px-6 py-4 sm:py-6 space-y-4 backdrop-blur-sm">
-                <div className="space-y-2.5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-left">
-                    <div className="rounded-md border border-[#B9AACB] bg-white/80 px-2.5 py-2 shadow-sm">
-                      <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#B9AACB] uppercase mb-0.5">
-                        Date
-                      </p>
-                      <p className="text-sm sm:text-base font-bold text-[#6A4F82]">{info.date}</p>
-                    </div>
-                    <div className="rounded-md border border-[#B9AACB] bg-white/80 px-2.5 py-2 shadow-sm">
-                      <p className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-[#B9AACB] uppercase mb-0.5">
-                        {info.label}
-                      </p>
-                      <p className="text-sm sm:text-base font-bold text-[#6A4F82]">{info.time}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-3">
-                  <button
-                    onClick={() => openInMaps(info.mapLink)}
-                    className="flex items-center justify-center gap-1.5 rounded-lg bg-[#6A4F82] text-white py-2.5 sm:py-3 shadow-lg hover:translate-y-[-2px] hover:bg-[#B9AACB] transition-all text-xs sm:text-sm font-semibold"
-                  >
-                    <Navigation className="w-4 h-4" />
-                    Get Directions
-                  </button>
-                  <button
-                    onClick={() => copyToClipboard(info.location, info.key)}
-                    className="flex items-center justify-center gap-1.5 rounded-lg border border-[#B9AACB]/35 text-[#6A4F82] py-2.5 sm:py-3 hover:bg-[#B9AACB]/5 transition-all text-xs sm:text-sm font-semibold"
-                  >
-                    {copiedItems.has(info.key) ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-4 h-4" />
-                        Copy Address
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Additional Information - Compact for mobile */}
-      <div className="relative z-10 mb-4 sm:mb-7 max-w-4xl mx-auto px-3 sm:px-5">
-        <div className="text-center mb-3 sm:mb-5">
-          <h3 className="text-base sm:text-xl md:text-2xl font-semibold mb-1 sm:mb-2 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
-            Important Information
-          </h3>
-          <p className="text-[11px] sm:text-xs md:text-sm text-white/90 max-w-xl mx-auto leading-relaxed drop-shadow-[0_3px_12px_rgba(0,0,0,0.7)]">
-            Kindly take note of these details to help the day flow smoothly and beautifully.
-          </p>
-        </div>
-
-        <div className="space-y-3 sm:space-y-4">
-          {/* Attire Guidelines */}
-          <div className="relative rounded-2xl border border-white/40 bg-white/85 backdrop-blur-lg shadow-[0_18px_40px_rgba(106,79,130,0.18)] p-3.5 sm:p-5 overflow-hidden">
-            <div className="mb-2.5 sm:mb-3 relative z-10 text-center">
-              <h4 className="text-[0.75rem] sm:text-sm md:text-base font-semibold tracking-[0.3em] uppercase text-[#6A4F82]">
-                Attire &amp; Motif
-              </h4>
-            </div>
-
-            <div className="relative w-full rounded-2xl overflow-hidden border border-white/60 shadow-xl bg-white p-4 sm:p-6 space-y-3 sm:space-y-4">
-              <div className="text-center space-y-2 sm:space-y-3">
-                <p className="text-xs sm:text-sm font-semibold text-[#6A4F82]">
-                  {siteConfig.dressCode.note}
-                </p>
-                <p className="text-xs sm:text-sm text-[#6A4F82]/90">
-                  Please dress within our wedding colors to help create a soft, elegant romantic celebration.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="border-t border-[#B9AACB] pt-4">
-                  <h5 className="font-semibold text-xs sm:text-sm text-[#6A4F82] mb-2">Principal Sponsors Attire</h5>
-                  <p className="text-[10px] sm:text-xs text-[#6A4F82]/80 mb-2">Kindly align attire below.</p>
-                  <div className="relative w-full aspect-[4/3] sm:aspect-[5/3] rounded-xl overflow-hidden border border-[#B9AACB] bg-[#F4F4F4] mb-3">
-                    <Image
-                      src="/Details/Principal Sponsors Attire new.png"
-                      alt="Principal sponsors attire guideline"
-                      fill
-                      className="object-contain"
-                      sizes="(min-width: 1024px) 700px, (min-width: 640px) 600px, 100vw"
-                      priority={false}
-                    />
-                  </div>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-                    <p className="text-[#6A4F82]">
-                      <span className="font-semibold">Male Sponsor:</span> {siteConfig.dressCode.sponsors.male}
-                    </p>
-                    <p className="text-[#6A4F82]">
-                      <span className="font-semibold">Female Sponsor:</span> {siteConfig.dressCode.sponsors.female}
-                    </p>
-                    <div className="pt-1">
-                      {/* <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-[#6A4F82] mb-1">
-                        Palette
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {sponsorPalette.map((color) => (
-                          <span
-                            key={color}
-                            className="w-7 h-7 rounded-full border border-white/70 shadow-sm"
-                            style={{ backgroundColor: color }}
-                            title={color}
-                          />
-                        ))}
-                      </div> */}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-[#B9AACB] pt-4">
-                  <h5 className="font-semibold text-xs sm:text-sm text-[#6A4F82] mb-2">Wedding Guests</h5>
-                  <div className="relative w-full aspect-[4/3] sm:aspect-[5/3] rounded-xl overflow-hidden border border-[#B9AACB] bg-[#F4F4F4] mb-3">
-                    <Image
-                      src="/Details/Guest Attire 3.png"
-                      alt="Guest attire guideline"
-                      fill
-                      className="object-contain"
-                      sizes="(min-width: 1024px) 700px, (min-width: 640px) 600px, 100vw"
-                      priority={false}
-                    />
-                  </div>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-                    <p className="text-[#6A4F82] font-semibold">
-                      Formal or Semi Formal
-                    </p>
-                    <p className="text-[#6A4F82]">
-                      We Encourage you to dress according to our wedding color.
-                    </p>
-                    <div className="pt-1">
-                      <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-[#6A4F82] mb-1">
-                        Palette
-                      </p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {guestPalette.map((color) => (
-                          <span
-                            key={color}
-                            className="w-7 h-7 rounded-full border border-white/70 shadow-sm"
-                            style={{ backgroundColor: color }}
-                            title={color}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Arrival Time & Reception Guidelines */}
-          <div className="relative rounded-2xl border border-white/40 bg-white/85 backdrop-blur-lg shadow-[0_18px_40px_rgba(106,79,130,0.18)] p-3.5 sm:p-5 overflow-hidden">
-            <div className="space-y-4 sm:space-y-5">
-              {/* Arrival Time */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-white/60 shadow-xl bg-white p-4 sm:p-6">
-                <div className="mb-3 sm:mb-4">
-                  <h4 className="text-[0.75rem] sm:text-sm md:text-base font-semibold tracking-[0.3em] uppercase text-[#6A4F82] mb-3">
-                    Arrival Time
-                  </h4>
-                  <div className="space-y-2 sm:space-y-2.5">
-                    <p className="text-xs sm:text-sm text-[#6A4F82] leading-relaxed">
-                      Kindly arrive by <span className="font-semibold text-[#B9AACB]">{siteConfig.ceremony.guestsTime}</span> so we can begin the wedding ceremony promptly at exactly <span className="font-semibold text-[#B9AACB]">{siteConfig.ceremony.time}</span>.
-                    </p>
-                    <p className="text-xs sm:text-sm text-[#6A4F82] leading-relaxed">
-                      Your punctuality means so much to us — and don&apos;t forget to have a light snack beforehand so you can enjoy the celebration comfortably!
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Reception Guidelines */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-white/60 shadow-xl bg-white p-4 sm:p-6">
-                <div className="mb-3 sm:mb-4">
-                  <h4 className="text-[0.75rem] sm:text-sm md:text-base font-semibold tracking-[0.3em] uppercase text-[#6A4F82] mb-3">
-                    Reception Guidelines
-                  </h4>
-                  <div className="space-y-2 sm:space-y-2.5">
-                    <p className="text-xs sm:text-sm text-[#6A4F82] leading-relaxed">
-                      The seating will be formal, RSVP-style. That's why we're asking you to fill out this invitation form to secure your spot. Kindly do not bring plus ones unless explicitly stated in your invitation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Travel & Parking - Compact, purple lilac motif */}
-          <div className="relative rounded-2xl border border-[#B9AACB]/70 bg-[#F4F4F4]/90 backdrop-blur-lg shadow-[0_18px_40px_rgba(106,79,130,0.18)] p-3.5 sm:p-5 overflow-hidden">
-            {/* Header */}
-            <div className="flex items-center justify-center gap-2 mb-2.5 sm:mb-3 relative z-10">
-              <div className="p-1.5 rounded-full shadow-md bg-white/95 border border-[#B9AACB]/60">
-                <Car className="w-3.5 h-3.5 text-[#6A4F82]" />
-              </div>
-              <h4 className="font-semibold text-xs sm:text-base text-[#6A4F82]">Parking &amp; Travel</h4>
-            </div>
-
-            <div className="space-y-3 relative z-10">
-              {/* Parking */}
-              <div className="rounded-xl p-2.5 sm:p-3 border border-[#B9AACB]/80 bg-gradient-to-br from-white/95 via-[#F4F4F4]/95 to-white/90 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-[#6A4F82]/90 text-[#F4F4F4]">
-                    <Car className="w-4 h-4" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[11px] sm:text-sm font-semibold text-[#6A4F82]">Parking Available</p>
-                    <p className="text-[10px] sm:text-xs text-[#6A4F82]/85">
-                      Parking is available at the venue. Please arrive early to find a comfortable spot.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Transportation */}
-              <div className="rounded-xl p-2.5 sm:p-3 border border-[#B9AACB]/80 bg-gradient-to-br from-white/95 via-[#F4F4F4]/95 to-white/90 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-[#B9AACB]/90 text-[#F4F4F4]">
-                    <Navigation className="w-4 h-4" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[11px] sm:text-sm font-semibold text-[#6A4F82]">Transportation</p>
-                    <p className="text-[10px] sm:text-xs text-[#6A4F82]/85">
-                      Private vehicles and local transport are welcome. Coordinate with friends or family and plan your
-                      route ahead of time.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Tips */}
-              <div className="rounded-xl p-2.5 sm:p-3 border border-[#B9AACB]/75 bg-gradient-to-br from-white/95 via-[#F4F4F4]/95 to-white/90">
-                <p className="text-[11px] sm:text-sm font-semibold mb-2 flex items-center gap-2 text-[#6A4F82]">
-                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#6A4F82]/10 text-[#6A4F82]">
-                    <MapPin className="w-3.5 h-3.5" />
-                  </span>
-                  Quick Tips
-                </p>
-                <ul className="text-[10px] sm:text-xs space-y-1 text-[#6A4F82]/90">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#B9AACB] mt-0.5">•</span>
-                    <span>Plan your route ahead to avoid unexpected delays.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#B9AACB] mt-0.5">•</span>
-                    <span>Please avoid walking during the ceremony. Approach the coordinator or wait to be guided.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#B9AACB] mt-0.5">•</span>
-                    <span>Coordinate carpooling with friends or family when possible.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Image Modal */}
-      {showImageModal && (
-        <div
-          className="fixed inset-0 backdrop-blur-xl z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 animate-in fade-in duration-500"
-          onClick={() => setShowImageModal(null)}
-          style={{ backgroundColor: "rgba(248, 241, 236, 0.96)" }}
-        >
-          {/* Decorative background elements */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div
-              className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-              style={{ backgroundColor: "#660033", opacity: 0.12 }}
-            />
-            <div
-              className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-              style={{ backgroundColor: "#B76E79", opacity: 0.14, animationDelay: "1s" }}
-            />
-          </div>
-
-          <div
-            className="relative max-w-6xl w-full max-h-[95vh] sm:max-h-[90vh] bg-gradient-to-br from-white via-white rounded-3xl overflow-hidden shadow-2xl border-2 animate-in zoom-in-95 duration-500 group"
-            onClick={(e) => e.stopPropagation()}
-            style={{ borderColor: "#6600331f", backgroundColor: "#FFF8F2" }}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 
+            className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#4a5d4e] mb-2"
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            }}
           >
-            {/* Decorative top accent */}
-            <div
-              className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r"
-              style={{ background: "linear-gradient(to right, #660033, #B76E79, #F5E5D9)" }}
-            />
+            The Details
+          </h2>
+        </div>
 
-            {/* Enhanced close button */}
-            <button
-              onClick={() => setShowImageModal(null)}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 md:top-6 md:right-6 z-20 hover:bg-white backdrop-blur-sm p-2.5 sm:p-3 rounded-xl shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl active:scale-95 border-2 group/close"
-              title="Close (ESC)"
-              style={{ backgroundColor: "#FFF8F2", borderColor: "#66003333", color: "#1a1a1a" }}
+        {/* Timeline Section */}
+        <div className="mb-10 sm:mb-12 md:mb-16">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 
+              className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 text-center font-light`}
+              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
             >
-              <X className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover/close:text-red-500 transition-colors" />
-            </button>
-
-            {/* Venue badge */}
-            <div className="absolute top-4 left-4 sm:top-5 sm:left-5 md:top-6 md:left-6 z-20">
-              <div
-                className="flex items-center gap-2 backdrop-blur-md px-4 py-2 rounded-full shadow-xl border-2"
-                style={{ backgroundColor: "#FFF8F2", borderColor: "#66003333" }}
-              >
-                {showImageModal === "ceremony" ? (
-                  <>
-                    <Heart className="w-4 h-4" fill="#B76E79" style={{ color: "#660033" }} />
-                    <span className="text-xs sm:text-sm font-bold" style={{ color: "#1a1a1a" }}>
-                      Ceremony Venue
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <Utensils className="w-4 h-4" style={{ color: "#B76E79" }} />
-                    <span className="text-xs sm:text-sm font-bold" style={{ color: "#1a1a1a" }}>
-                      Reception Venue
-                    </span>
-                  </>
-                )}
-              </div>
+              Timeline
+            </h3>
+            {/* Date and Time below Timeline label */}
+            <div className={`${cormorant.className} text-sm sm:text-base md:text-lg text-[#4a5d4e]/90 font-light`}>
+              <p className="mb-1">{siteConfig.ceremony.date}</p>
+              <p className="text-xs sm:text-sm text-[#4a5d4e]/80">
+                {siteConfig.ceremony.day} • {siteConfig.ceremony.time}
+              </p>
             </div>
-
-            {/* Image section with enhanced effects */}
-            <div
-              className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] overflow-hidden"
-              style={{ backgroundColor: "#FFF8F2" }}
-            >
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-1000 z-0" />
-
-              <Image
-                src={showImageModal === "ceremony" ? "/Details/RELIGIOUS-Daraga_Church,_Albay.jpg" : "/Details/Hotel St. ellis.jpg"}
-                alt={showImageModal === "ceremony" ? siteConfig.ceremony.location : siteConfig.reception.location}
-                fill
-                className="object-contain p-6 sm:p-8 md:p-10 transition-transform duration-700 group-hover:scale-105 z-10"
-                sizes="95vw"
-                priority
-              />
+          </div>
+          
+          <div className="relative px-2 sm:px-4 md:px-6">
+            {/* Enhanced horizontal connecting line with dots - desktop */}
+            <div className="hidden sm:flex absolute top-20 md:top-24 left-4 right-4 items-center z-0">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/25 to-[#4a5d4e]/30" />
+              {timelineEvents.slice(1).map((_, idx) => (
+                <React.Fragment key={idx}>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#4a5d4e]/30 mx-1" />
+                  <div className="flex-1 h-px bg-gradient-to-r from-[#4a5d4e]/30 via-[#4a5d4e]/25 to-[#4a5d4e]/30" />
+                </React.Fragment>
+              ))}
             </div>
-
-            {/* Enhanced content section */}
-            <div
-              className="p-5 sm:p-6 md:p-8 bg-gradient-to-br from-white to-white/95 backdrop-blur-sm border-t-2 relative"
-              style={{ borderColor: "#6600331f", backgroundColor: "#FFF8F2" }}
-            >
-              {/* Decorative line */}
-              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#660033]/30 to-transparent" />
-
-              <div className="space-y-5">
-                {/* Header with venue info */}
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div className="space-y-2">
-                    <h3
-                      className="text-xl sm:text-2xl md:text-3xl font-bold flex items-center gap-3"
-                      style={{ color: "#1a1a1a" }}
-                    >
-                      {showImageModal === "ceremony" ? (
-                        <Heart className="w-6 h-6" fill="#B76E79" style={{ color: "#660033" }} />
-                      ) : (
-                        <Utensils className="w-6 h-6" style={{ color: "#B76E79" }} />
-                      )}
-                      {showImageModal === "ceremony" ? siteConfig.ceremony.venue : siteConfig.reception.venue}
-                    </h3>
-                    <div className="flex items-center gap-2 text-sm opacity-70" style={{ color: "#1a1a1a" }}>
-                      <MapPin className="w-4 h-4" style={{ color: "#660033" }} />
-                      <span>
-                        {showImageModal === "ceremony"
-                          ? siteConfig.ceremony.location
-                          : siteConfig.reception.location}
-                      </span>
+            
+            {/* Mobile connecting lines - between rows */}
+            <div className="sm:hidden absolute top-20 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/20 to-transparent" />
+            <div className="sm:hidden absolute top-[15.5rem] left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#4a5d4e]/20 to-transparent" />
+            
+            <div className="grid grid-cols-3 sm:flex sm:justify-center gap-4 sm:gap-4 md:gap-6 lg:gap-8 relative items-start">
+              {timelineEvents.map((event) => {
+                return (
+                  <div 
+                    key={event.label} 
+                    className="flex flex-col items-center gap-3 sm:gap-4 flex-1 sm:flex-initial group"
+                  >
+                    {/* Image with enhanced styling */}
+                    <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#4a5d4e]/5 to-transparent rounded-full blur-sm group-hover:blur-md transition-all duration-300" />
+                      <Image
+                        src={event.image}
+                        alt={event.label}
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-contain drop-shadow-md relative z-10"
+                      />
                     </div>
-
-                    {/* Date & Time info */}
-                    {showImageModal === "ceremony" && (
-                      <div
-                        className="flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg border"
-                        style={{
-                          color: "#1a1a1a",
-                          backgroundColor: "#F5E5D9",
-                          opacity: 0.9,
-                          borderColor: "#66003333",
-                        }}
-                      >
-                        <Clock className="w-4 h-4" style={{ color: "#660033" }} />
-                        <span>
-                          {siteConfig.ceremony.date} at {siteConfig.ceremony.time}
-                        </span>
-                      </div>
-                    )}
-                    {showImageModal === "reception" && (
-                      <div
-                        className="flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg border"
-                        style={{
-                          color: "#1a1a1a",
-                          backgroundColor: "#FDECEF",
-                          opacity: 0.9,
-                          borderColor: "#B76E7933",
-                        }}
-                      >
-                        <Clock className="w-4 h-4" style={{ color: "#B76E79" }} />
-                        <span>
-                          {siteConfig.reception.date} - {siteConfig.reception.time}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Action buttons */}
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
-                    <button
-                      onClick={() =>
-                        copyToClipboard(
-                          showImageModal === "ceremony"
-                            ? siteConfig.ceremony.location
-                            : siteConfig.reception.location,
-                          `modal-${showImageModal}`,
-                        )
-                      }
-                      className="flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-white border-2 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 shadow-md hover:bg-[#F5E5D9]/25 whitespace-nowrap"
-                      title="Copy address"
-                      style={{ borderColor: "#66003333", color: "#1a1a1a" }}
+                    {/* Label below image */}
+                    <p 
+                      className={`${cormorant.className} text-xs sm:text-sm md:text-base text-[#4a5d4e] font-light text-center mt-1`}
+                      style={{ 
+                        letterSpacing: "0.02em",
+                        textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                      }}
                     >
-                      {copiedItems.has(`modal-${showImageModal}`) ? (
+                      {event.label}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* What to Wear Section */}
+        <div className="mb-10 sm:mb-12">
+          <h3 
+            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4 text-center"
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            }}
+          >
+            What to wear
+          </h3>
+          <div 
+            className={`${cormorant.className} text-center space-y-4 text-[#4a5d4e] font-light`}
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+            }}
+          >
+            <p className="text-base sm:text-lg font-semibold uppercase tracking-wider">
+              SEMI-FORMAL ATTIRE
+            </p>
+            <p className="text-sm sm:text-base">We'd love to see you on these colors.</p>
+            <div className="flex justify-center gap-3 py-2">
+              {attireColors.map((color, index) => (
+                <div
+                  key={index}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#4a5d4e]/20"
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+            </div>
+            <div className="space-y-2 text-sm sm:text-base pt-2">
+              <p>Gentlemen: Long sleeves polo and slacks</p>
+              <p>Ladies: Floor length dress</p>
+            </div>
+          </div>
+        </div>
+
+        {/* A Note on Gifts Section */}
+        <div className="mb-10 sm:mb-12 text-center">
+          <h3 
+            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4"
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            }}
+          >
+            A note on gifts
+          </h3>
+          <div 
+            className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base space-y-2 max-w-2xl mx-auto font-light leading-relaxed`}
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+            }}
+          >
+            <p>As love is what the day is all about,</p>
+            <p>your presence is one we can't celebrate without.</p>
+            <p>But should you still believe</p>
+            <p>that a gift is worth giving,</p>
+            <p>a monetary one would be warmly appreciated</p>
+            <p>as we begin our new life.</p>
+          </div>
+        </div>
+
+        {/* Unplugged Ceremony Section */}
+        <div className="mb-10 sm:mb-12 text-center">
+          <h3 
+            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4"
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            }}
+          >
+            Unplugged Ceremony
+          </h3>
+          <div 
+            className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base space-y-2 max-w-2xl mx-auto font-light leading-relaxed`}
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+            }}
+          >
+            <p>We invite you to be fully present</p>
+            <p>with us during our ceremony.</p>
+            <p>Please turn off your phones and cameras and</p>
+            <p>enjoy this special moment.</p>
+          </div>
+        </div>
+
+        {/* How To Get There Section */}
+        <div className="mb-8 text-center">
+          <h3 
+            className="style-script-regular text-2xl sm:text-3xl text-[#4a5d4e] mb-4"
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            }}
+          >
+            How To Get There?
+          </h3>
+          <div 
+            className={`${cormorant.className} text-[#4a5d4e] text-sm sm:text-base space-y-4 font-light`}
+            style={{ 
+              letterSpacing: "0.02em",
+              textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+            }}
+          >
+            <p>Scan the QR codes</p>
+            <p>with your phone</p>
+            <p>to get the direction via</p>
+            <p className="font-semibold">Google Maps.</p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-6 max-w-2xl mx-auto">
+              {/* Ceremony QR Code */}
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 border-2 border-[#4a5d4e]/30 bg-white p-3 flex items-center justify-center shadow-sm rounded-sm">
+                  <QRCodeSVG
+                    value={ceremonyMapsLink}
+                    size={160}
+                    level="H"
+                    includeMargin={false}
+                    fgColor="#4a5d4e"
+                    bgColor="#FFFFFF"
+                  />
+                </div>
+                <div className="space-y-2 w-full">
+                  <p 
+                    className={`${cormorant.className} text-sm font-semibold text-[#4a5d4e] uppercase tracking-wider`}
+                    style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
+                  >
+                    CEREMONY
+                  </p>
+                  <div 
+                    className={`${cormorant.className} text-xs text-[#4a5d4e]/85 space-y-1 font-light`}
+                    style={{ 
+                      letterSpacing: "0.02em",
+                      textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                    }}
+                  >
+                    <p className="font-semibold">{siteConfig.ceremony.venue}</p>
+                    <p className="leading-relaxed">{ceremonyLocation}</p>
+                  </div>
+                  <div className="mt-3 flex gap-2 w-full">
+                    <button
+                      onClick={() => openInMaps(ceremonyMapsLink)}
+                      className={`${cormorant.className} flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#4a5d4e] text-white rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                    >
+                      <Navigation className="w-4 h-4" />
+                      Open in Maps
+                    </button>
+                    <button
+                      onClick={() => copyToClipboard(ceremonyLocation, "ceremony")}
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 border border-[#4a5d4e]/30 text-[#4a5d4e] rounded-sm hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                    >
+                      {copiedItems.has("ceremony") ? (
                         <>
                           <Check className="w-4 h-4" />
-                          <span>Copied!</span>
+                          <span className="hidden sm:inline">Copied</span>
                         </>
                       ) : (
                         <>
                           <Copy className="w-4 h-4" />
-                          <span>Copy Address</span>
+                          <span className="hidden sm:inline">Copy</span>
                         </>
                       )}
                     </button>
-
-                    <button
-                      onClick={() =>
-                        openInMaps(showImageModal === "ceremony" ? ceremonyMapsLink : receptionMapsLink)
-                      }
-                      className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 shadow-lg whitespace-nowrap text-white"
-                      style={{
-                        background:
-                          showImageModal === "ceremony"
-                            ? "linear-gradient(to right, #660033, #B76E79)"
-                            : "linear-gradient(to right, #B76E79, #F5E5D9)",
-                      }}
-                    >
-                      <Navigation className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span>Get Directions</span>
-                    </button>
                   </div>
                 </div>
+              </div>
 
-                {/* Additional info */}
-                <div className="flex items-center gap-2 text-xs opacity-65" style={{ color: "#1a1a1a" }}>
-                  <span className="flex items-center gap-1.5">
-                    <Camera className="w-3 h-3" />
-                    Click outside to close
-                  </span>
-                  <span className="hidden sm:inline">•</span>
-                  <span className="hidden sm:inline-flex items-center gap-1.5">Press ESC to close</span>
+              {/* Reception QR Code */}
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 border-2 border-[#4a5d4e]/30 bg-white p-3 flex items-center justify-center shadow-sm rounded-sm">
+                  <QRCodeSVG
+                    value={receptionMapsLink}
+                    size={160}
+                    level="H"
+                    includeMargin={false}
+                    fgColor="#4a5d4e"
+                    bgColor="#FFFFFF"
+                  />
+                </div>
+                <div className="space-y-2 w-full">
+                  <p 
+                    className={`${cormorant.className} text-sm font-semibold text-[#4a5d4e] uppercase tracking-wider`}
+                    style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
+                  >
+                    RECEPTION
+                  </p>
+                  <div 
+                    className={`${cormorant.className} text-xs text-[#4a5d4e]/85 space-y-1 font-light`}
+                    style={{ 
+                      letterSpacing: "0.02em",
+                      textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
+                    }}
+                  >
+                    <p className="font-semibold">{siteConfig.reception.venue}</p>
+                    <p className="leading-relaxed">{receptionLocation}</p>
+                  </div>
+                  <div className="mt-3 flex gap-2 w-full">
+                    <button
+                      onClick={() => openInMaps(receptionMapsLink)}
+                      className={`${cormorant.className} flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#4a5d4e] text-white rounded-sm hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                    >
+                      <Navigation className="w-4 h-4" />
+                      Open in Maps
+                    </button>
+                    <button
+                      onClick={() => copyToClipboard(receptionLocation, "reception")}
+                      className={`${cormorant.className} flex items-center justify-center gap-2 px-4 py-2 border border-[#4a5d4e]/30 text-[#4a5d4e] rounded-sm hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm`}
+                    >
+                      {copiedItems.has("reception") ? (
+                        <>
+                          <Check className="w-4 h-4" />
+                          <span className="hidden sm:inline">Copied</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-4 h-4" />
+                          <span className="hidden sm:inline">Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
+
+      {/* Torn paper edge at bottom */}
+      {/* <TornPaperEdge position="bottom" /> */}
     </Section>
   )
 }
-
-

@@ -2,44 +2,47 @@
 
 import { useEffect, useState, useMemo } from "react"
 import { motion } from "motion/react"
-import { Cormorant_Garamond, Cinzel } from "next/font/google"
+import { TornPaperEdge } from "@/components/torn-paper-edge"
 import { siteConfig } from "@/content/site"
 
 const desktopImages = [
-  "/desktop-background/couple (1).jpg",
-  "/desktop-background/couple (2).jpg",
-  "/desktop-background/couple (3).jpg",
-  "/desktop-background/couple (4).jpg",
-  "/desktop-background/couple (5).jpg",
+  "/desktop-background/couple (1).jpeg",
+  "/desktop-background/couple (2).jpeg",
+  "/desktop-background/couple (3).jpeg",
+  "/desktop-background/couple (4).jpeg",
+  "/desktop-background/couple (5).jpeg",
 
 ]
 
 const mobileImages = [
-  "/mobile-background/couple (1).jpg",
-  "/mobile-background/couple (2).jpg",
-  "/mobile-background/couple (3).jpg",
-  "/mobile-background/couple (5).jpg",
-  "/mobile-background/couple (6).jpg",
-  "/mobile-background/couple (7).jpg",
+  "/mobile-background/couple (1).jpeg",
+  "/mobile-background/couple (2).jpeg",
+  "/mobile-background/couple (3).jpeg",
+  "/mobile-background/couple (5).jpeg",
+  "/mobile-background/couple (6).jpeg",
+  "/mobile-background/couple (7).jpeg",
 ]
 
 const SHOW_BUTTERFLIES = false
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-})
-
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "700",
-})
 
 export function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [imagesLoaded, setImagesLoaded] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+  
+  // Parse wedding date for display
+  const weddingDate = siteConfig.wedding.date || siteConfig.ceremony.date
+  const [weddingMonth = "January", weddingDayRaw = "28", weddingYear = "2026"] = weddingDate.split(" ")
+  const weddingDayNumber = weddingDayRaw.replace(/[^0-9]/g, "") || "28"
+  
+  // Convert month name to number
+  const monthMap: { [key: string]: string } = {
+    "January": "01", "February": "02", "March": "03", "April": "04",
+    "May": "05", "June": "06", "July": "07", "August": "08",
+    "September": "09", "October": "10", "November": "11", "December": "12"
+  }
+  const monthNumber = monthMap[weddingMonth] || "01"
+  const dayNumber = weddingDayNumber.padStart(2, "0")
 
   // Detect screen size and update isMobile state
   useEffect(() => {
@@ -94,24 +97,9 @@ export function Hero() {
     return () => clearInterval(imageTimer)
   }, [imagesLoaded, backgroundImages])
 
-  useEffect(() => {
-    if (imagesLoaded) {
-      setIsVisible(true)
-    }
-  }, [imagesLoaded])
-
-  const [weddingMonth = "June", weddingDayRaw = "7", weddingYear = "2026"] =
-    siteConfig.wedding.date.split(" ")
-  const weddingDayNumber = weddingDayRaw.replace(/[^0-9]/g, "") || "7"
-  const ceremonyTime = siteConfig.wedding.time
-  const groomName = siteConfig.couple.groomNickname || siteConfig.couple.groom
-  const brideName = siteConfig.couple.brideNickname || siteConfig.couple.bride
-  const ceremonyDayShort = siteConfig.ceremony.day
-    ? siteConfig.ceremony.day.slice(0, 3).toUpperCase()
-    : "THU"
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#6A4F82]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         {imagesLoaded && backgroundImages.map((image, index) => (
           <div
@@ -128,11 +116,181 @@ export function Hero() {
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#6A4F82]/90 via-[#B9AACB]/70 to-transparent z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#5B6B3C]/75 z-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(185,170,203,0.3),transparent_55%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(168,175,141,0.28),transparent_35%)] opacity-70 animate-[pulse_9s_ease-in-out_infinite]" />
+        
+        {/* Fluffy mist/fog effect at the top - seamless blend */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          {/* Main top mist - fluffy fog gradient with soft edges */}
+          <div 
+            className="absolute top-0 left-0 right-0 h-[45%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 150% 120% at 50% 0%, 
+                  rgba(255,255,255,0.9) 0%, 
+                  rgba(255,255,255,0.8) 8%, 
+                  rgba(255,255,255,0.65) 18%, 
+                  rgba(255,255,255,0.45) 35%, 
+                  rgba(255,255,255,0.25) 55%, 
+                  rgba(255,255,255,0.1) 75%, 
+                  transparent 100%)
+              `,
+              filter: 'blur(2px)',
+            }}
+          />
+          
+          {/* Left side fluffy cloud */}
+          <div 
+            className="absolute top-0 left-0 h-[40%] w-[50%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 180% 100% at 0% 0%, 
+                  rgba(255,255,255,0.7) 0%, 
+                  rgba(255,255,255,0.5) 15%, 
+                  rgba(255,255,255,0.3) 30%, 
+                  rgba(255,255,255,0.15) 50%, 
+                  transparent 80%)
+              `,
+              filter: 'blur(3px)',
+            }}
+          />
+          
+          {/* Right side fluffy cloud */}
+          <div 
+            className="absolute top-0 right-0 h-[40%] w-[50%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 180% 100% at 100% 0%, 
+                  rgba(255,255,255,0.7) 0%, 
+                  rgba(255,255,255,0.5) 15%, 
+                  rgba(255,255,255,0.3) 30%, 
+                  rgba(255,255,255,0.15) 50%, 
+                  transparent 80%)
+              `,
+              filter: 'blur(3px)',
+            }}
+          />
+          
+          {/* Center fluffy accent */}
+          <div 
+            className="absolute top-0 left-1/2 -translate-x-1/2 h-[35%] w-[60%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 120% 90% at 50% 0%, 
+                  rgba(255,255,255,0.6) 0%, 
+                  rgba(255,255,255,0.4) 20%, 
+                  rgba(255,255,255,0.2) 40%, 
+                  transparent 70%)
+              `,
+              filter: 'blur(4px)',
+            }}
+          />
+        </div>
+
+        {/* Fluffy mist/fog effect at the bottom - seamless blend */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          {/* Main bottom mist - fluffy fog gradient with soft edges */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-[45%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 150% 120% at 50% 100%, 
+                  rgba(255,255,255,0.9) 0%, 
+                  rgba(255,255,255,0.8) 8%, 
+                  rgba(255,255,255,0.65) 18%, 
+                  rgba(255,255,255,0.45) 35%, 
+                  rgba(255,255,255,0.25) 55%, 
+                  rgba(255,255,255,0.1) 75%, 
+                  transparent 100%)
+              `,
+              filter: 'blur(2px)',
+            }}
+          />
+          
+          {/* Left side fluffy cloud */}
+          <div 
+            className="absolute bottom-0 left-0 h-[40%] w-[50%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 180% 100% at 0% 100%, 
+                  rgba(255,255,255,0.7) 0%, 
+                  rgba(255,255,255,0.5) 15%, 
+                  rgba(255,255,255,0.3) 30%, 
+                  rgba(255,255,255,0.15) 50%, 
+                  transparent 80%)
+              `,
+              filter: 'blur(3px)',
+            }}
+          />
+          
+          {/* Right side fluffy cloud */}
+          <div 
+            className="absolute bottom-0 right-0 h-[40%] w-[50%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 180% 100% at 100% 100%, 
+                  rgba(255,255,255,0.7) 0%, 
+                  rgba(255,255,255,0.5) 15%, 
+                  rgba(255,255,255,0.3) 30%, 
+                  rgba(255,255,255,0.15) 50%, 
+                  transparent 80%)
+              `,
+              filter: 'blur(3px)',
+            }}
+          />
+          
+          {/* Center fluffy accent */}
+          <div 
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[35%] w-[60%]"
+            style={{
+              background: `
+                radial-gradient(ellipse 120% 90% at 50% 100%, 
+                  rgba(255,255,255,0.6) 0%, 
+                  rgba(255,255,255,0.4) 20%, 
+                  rgba(255,255,255,0.2) 40%, 
+                  transparent 70%)
+              `,
+              filter: 'blur(4px)',
+            }}
+          />
+        </div>
       </div>
+
+      {/* Top center text - Elegant light grey serif style */}
+      <div className="absolute top-0 left-0 right-0 z-10 flex flex-col items-center justify-center pt-8 sm:pt-12 md:pt-16 lg:pt-20">
+        <h1
+          className="style-script-regular text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#4a5d4e]"
+          style={{
+            textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
+            letterSpacing: "0.02em",
+          }}
+        >
+          {siteConfig.couple.groomNickname} & {siteConfig.couple.brideNickname}
+        </h1>
+        <p
+          className="text-[#4a5d4e] text-base sm:text-lg md:text-xl lg:text-2xl mt-4 sm:mt-5 md:mt-6"
+          style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontWeight: 400,
+            textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
+            letterSpacing: "0.05em",
+          }}
+        >
+          SAVE THE DATE
+        </p>
+        <p
+          className="text-[#4a5d4e] text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 sm:mt-3"
+          style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontWeight: 400,
+            textShadow: "0 2px 8px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)",
+            letterSpacing: "0.03em",
+          }}
+        >
+          {monthNumber} | {dayNumber} | {weddingYear}
+        </p>
+      </div>
+
+      {/* Torn paper edge at bottom */}
+      {/* <TornPaperEdge position="bottom" /> */}
 
       {SHOW_BUTTERFLIES && (
         <>
@@ -451,160 +609,6 @@ export function Hero() {
         </>
       )}
 
-      <div className="relative z-10 w-full container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col items-center justify-center min-h-screen pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-12 md:pb-16">
-        <div
-          className={`w-full max-w-3xl text-center space-y-3 sm:space-y-4 md:space-y-5 transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          {/* Main Invitation Text */}
-          <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            {/* Names & Tagline */}
-            <h1
-              className={`${cormorant.className} text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.24em] sm:tracking-[0.28em] uppercase font-medium text-center text-[#F0F0EE]`}
-              style={{
-                textShadow: "0 2px 10px rgba(0,0,0,0.75)",
-              }}
-            >
-              Together with our families,
-              <br />
-              we joyfully invite you to witness our union.
-            </h1>
-            <h1
-              className="style-script-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl drop-shadow-2xl"
-              style={{
-                color: '#FFFFFF',
-                textShadow: "0 0 24px rgba(0,0,0,0.9)",
-              }}
-            >
-              <span className="block">{brideName}</span>
-              <span className="block">&</span>
-              <span className="block">{groomName}</span>
-            </h1>
-          </div>
-
-          {/* Date & Time block */}
-          <div className="w-full max-w-2xl mx-auto">
-            <div
-              className={`${cormorant.className} flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 text-[#FDF8F5]/95`}
-              style={{ textShadow: "0 4px 16px rgba(0,0,0,0.6)" }}
-            >
-              <span
-                className={`${cinzel.className} text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] font-light text-white`}
-                style={{ textShadow: "0 2px 14px rgba(106,79,130,0.65)" }}
-              >
-                {weddingMonth}
-              </span>
-
-              <div className="flex w-full items-center gap-2 sm:gap-4 md:gap-5">
-                {/* Day of week & divider */}
-              <div className="flex flex-1 items-center justify-end gap-1.5 sm:gap-2.5">
-                  <span className="h-[0.5px] flex-1 bg-[#F4F4F4]/45" />
-                  <span
-                    className={`${cinzel.className} text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light text-white`}
-                    style={{ textShadow: "0 2px 14px rgba(106,79,130,0.65)" }}
-                  >
-                    {ceremonyDayShort}
-                  </span>
-                  <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#F4F4F4]/45" />
-                </div>
-
-                {/* Day number */}
-                <div className="relative flex items-center justify-center px-3 sm:px-4 md:px-5">
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 mx-auto h-[70%] max-h-[180px] w-[100px] sm:w-[140px] md:w-[170px] rounded-full bg-gradient-to-b from-[#B9AACB]/40 via-[#A8AF8D]/30 to-transparent blur-[28px] opacity-80"
-                  />
-                  <span
-                    className={`${cinzel.className} relative text-[4rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7rem] font-light leading-none tracking-wider text-white`}
-                    style={{
-                      textShadow: "0 0 22px rgba(185,170,203,0.9), 0 0 40px rgba(185,170,203,0.7)",
-                      filter: "drop-shadow(0 0 26px rgba(185,170,203,0.65))",
-                    }}
-                  >
-                    {weddingDayNumber}
-                  </span>
-                </div>
-
-                {/* Time */}
-                <div className="flex flex-1 items-center gap-1.5 sm:gap-2.5">
-                  <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#F4F4F4]/45" />
-                  <span
-                    className={`${cinzel.className} text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light text-white`}
-                    style={{ textShadow: "0 2px 14px rgba(106,79,130,0.65)" }}
-                  >
-                    {ceremonyTime.split(",")[0]}
-                  </span>
-                  <span className="h-[0.5px] flex-1 bg-[#F4F4F4]/45" />
-                </div>
-              </div>
-
-              <span
-                className={`${cinzel.className} text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] font-light text-white`}
-                style={{ textShadow: "0 2px 14px rgba(106,79,130,0.65)" }}
-              >
-                {weddingYear}
-              </span>
-            </div>
-          </div>
-
-          {/* Venue */}
-          <div className="space-y-1 sm:space-y-1.5 pt-1 sm:pt-2">
-            <p
-              className={`${cinzel.className} text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.22em] sm:tracking-[0.26em] md:tracking-[0.3em] text-[#F0F0EE] font-medium`}
-              style={{
-                textShadow: "0 2px 18px rgba(0,0,0,0.9)",
-              }}
-            >
-              {siteConfig.ceremony.venue}
-            </p>
-            <p
-              className={`${cinzel.className} text-[0.5rem] sm:text-[0.6rem] md:text-xs lg:text-sm tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] text-[#F0F0EE]/90 font-light px-2 sm:px-4 md:px-8 whitespace-nowrap`}
-              style={{
-                textShadow: "0 2px 12px rgba(0,0,0,0.7)",
-              }}
-            >
-              Reception to follow at {siteConfig.reception.venue}
-            </p>
-          </div>
-
-          {/* Call-to-action section */}
-          <div className="pt-3 sm:pt-4 md:pt-5 flex flex-col gap-3 sm:gap-4 items-center max-w-2xl mx-auto w-full px-4">
-            <p
-              className={`${cinzel.className} text-[0.7rem] sm:text-xs md:text-sm lg:text-base uppercase tracking-[0.24em] sm:tracking-[0.28em] text-[#F0F0EE]/95 font-normal leading-relaxed text-center px-4`}
-              style={{
-                textShadow: "0 2px 14px rgba(0,0,0,0.7)",
-              }}
-            >
-              Your presence, prayers, and love will mean the world to us.
-            </p>
-
-            {/* Call-to-action buttons */}
-            <div className="w-full flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch">
-            <a
-              href="#guest-list"
-              className={`${cormorant.className} group relative flex-1 sm:min-w-[200px] md:min-w-[220px] rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B9AACB]/70`}
-              style={{
-                backgroundColor: "#6A4F82",
-                boxShadow: "0 10px 24px rgba(106,79,130,0.4)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#B9AACB";
-                e.currentTarget.style.boxShadow = "0 12px 28px rgba(106,79,130,0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "#6A4F82";
-                e.currentTarget.style.boxShadow = "0 10px 24px rgba(106,79,130,0.4)";
-              }}
-            >
-              <span className="relative z-10 inline-flex h-full min-h-[3rem] sm:min-h-[3.25rem] w-full items-center justify-center px-6 sm:px-8 text-[0.65rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.32em] sm:tracking-[0.36em] text-[#F4F4F4] font-semibold transition-all duration-300" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.3)" }}>
-                Confirm Attendance
-              </span>
-            </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

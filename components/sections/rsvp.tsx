@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { Section } from "@/components/section"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/sections/ui/button"
 import { Heart, CheckCircle, AlertCircle, User, Users, MessageSquare } from "lucide-react"
 // import { siteContent } from "@/lib/content"
 
