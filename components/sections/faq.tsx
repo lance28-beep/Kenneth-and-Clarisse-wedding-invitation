@@ -115,7 +115,7 @@ export function FAQ() {
       {/* <TornPaperEdge position="bottom" /> */}
 
       {/* Section Header */}
-      <div className="relative z-30 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
+      <div className="relative z-10 text-center mb-6 sm:mb-9 md:mb-12 px-3 sm:px-4">
         {/* Small label */}
         <p
           className={`${cormorant.className} text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-[#4a5d4e] mb-2 font-light`}
@@ -140,7 +140,7 @@ export function FAQ() {
       </div>
 
       {/* FAQ content */}
-      <div className="relative z-30 max-w-4xl mx-auto px-3 sm:px-5">
+      <div className="relative z-10 max-w-4xl mx-auto px-3 sm:px-5">
         {/* Main card */}
         <div className="relative bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
           {/* Paper texture overlay */}

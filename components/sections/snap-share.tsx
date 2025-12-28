@@ -23,9 +23,9 @@ export function SnapShare() {
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
   const driveLink = siteConfig.snapShare?.googleDriveLink || "https://drive.google.com/drive/folders/1kOrf64ay6vx0pIeIjavvWp31B8nFWowQ?usp=sharing"
   const hashtags = [
-    "#TodaysMarkMyLifetimewithCath",
-    "#IWillMARKYouForeverCATH",
-    "#MARKedforlifewithCATHY"
+    "#KennethAndClarisse2026",
+    "#KennethAndClarisseTogether",
+    "#KennethAndClarisseForever"
   ]
   const allHashtagsText = hashtags.join(" ")
   const groomNickname = siteConfig.couple.groomNickname
@@ -243,15 +243,15 @@ export function SnapShare() {
 
             {/* Hashtags Section */}
             <div className="bg-[#FAF9F5]/98 backdrop-blur-md border border-[#D0D0D0]/40 rounded-lg sm:rounded-xl md:rounded-2xl shadow-md overflow-hidden">
-              <div className="p-4 sm:p-5 md:p-6 lg:p-8">
+              <div className="p-3 sm:p-4 md:p-5">
                 <h3 
-                  className={`${cormorant.className} text-xl sm:text-2xl md:text-3xl text-[#4a5d4e] mb-3 sm:mb-4 text-center font-light`}
+                  className={`${cormorant.className} text-lg sm:text-xl md:text-2xl text-[#4a5d4e] mb-2 text-center font-light`}
                   style={{ textShadow: "0 2px 8px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.08)" }}
                 >
                   Use Our Hashtags
                 </h3>
                 <p 
-                  className={`${cormorant.className} text-[#4a5d4e]/85 text-sm sm:text-base text-center mb-4 sm:mb-6 leading-relaxed font-light`}
+                  className={`${cormorant.className} text-[#4a5d4e]/85 text-xs sm:text-sm text-center mb-3 leading-relaxed font-light`}
                   style={{ 
                     letterSpacing: "0.02em",
                     textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
@@ -260,30 +260,30 @@ export function SnapShare() {
                   Tag your photos and posts with our wedding hashtags to join the celebration!
                 </p>
                 
-                <div className="space-y-3 mb-4 sm:mb-6">
+                <div className="space-y-2 mb-3">
                   {hashtags.map((hashtag, index) => (
                     <div
                       key={index}
-                      className="bg-white/50 rounded-lg p-3 sm:p-4 border border-[#D0D0D0]/40 hover:border-[#4a5d4e]/60 hover:bg-white/70 transition-all duration-300 shadow-sm"
+                      className="bg-white/50 rounded-md p-2.5 sm:p-3 border border-[#D0D0D0]/40 hover:border-[#4a5d4e]/60 hover:bg-white/70 transition-all duration-300 shadow-sm"
                     >
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <span className={`${cormorant.className} text-[#4a5d4e] font-semibold text-sm sm:text-base break-all flex-1 text-center sm:text-left`}>
+                      <div className="flex flex-row items-center justify-between gap-2">
+                        <span className={`${cormorant.className} text-[#4a5d4e] font-semibold text-sm sm:text-base break-words flex-1 text-left`}>
                           {hashtag}
                         </span>
                         <button
                           onClick={() => copyHashtag(hashtag, index)}
-                          className={`${cormorant.className} flex items-center gap-2 px-4 py-2 rounded-sm bg-[#4a5d4e] text-white hover:bg-[#3d4d3f] transition-colors text-xs sm:text-sm font-semibold shadow-sm whitespace-nowrap flex-shrink-0 ${
+                          className={`${cormorant.className} flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-[#4a5d4e] text-white hover:bg-[#3d4d3f] transition-colors text-xs font-semibold shadow-sm whitespace-nowrap flex-shrink-0 ${
                             copiedHashtagIndex === index ? "bg-green-600 hover:bg-green-700" : ""
                           }`}
                         >
                           {copiedHashtagIndex === index ? (
                             <>
-                              <Check className="w-4 h-4" />
+                              <Check className="w-3.5 h-3.5" />
                               <span>Copied!</span>
                             </>
                           ) : (
                             <>
-                              <Copy className="w-4 h-4" />
+                              <Copy className="w-3.5 h-3.5" />
                               <span>Copy</span>
                             </>
                           )}
@@ -295,18 +295,18 @@ export function SnapShare() {
 
                 <button
                   onClick={copyAllHashtags}
-                  className={`${cormorant.className} w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm border border-[#4a5d4e]/30 text-[#4a5d4e] hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs sm:text-sm font-semibold shadow-sm ${
+                  className={`${cormorant.className} w-full flex items-center justify-center gap-2 px-3 py-2 rounded-sm border border-[#4a5d4e]/30 text-[#4a5d4e] hover:bg-[#4a5d4e]/5 hover:border-[#4a5d4e]/40 transition-colors text-xs font-semibold shadow-sm ${
                     copiedAllHashtags ? "bg-green-50 border-green-300 text-green-700" : ""
                   }`}
                 >
                   {copiedAllHashtags ? (
                     <>
-                      <Check className="w-4 h-4" />
+                      <Check className="w-3.5 h-3.5" />
                       <span>All Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-3.5 h-3.5" />
                       <span>Copy All Hashtags</span>
                     </>
                   )}
