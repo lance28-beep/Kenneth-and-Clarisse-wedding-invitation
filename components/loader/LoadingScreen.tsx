@@ -83,7 +83,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               color: 'rgb(74, 93, 78)',
             }}
           >
-            K | C
+            K | M
           </div>
         </div>
 

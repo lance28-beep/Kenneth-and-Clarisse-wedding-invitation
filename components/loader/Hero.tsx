@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               color: 'rgb(74, 93, 78)',
             }}
           >
-            K | C
+            K | M
           </div>
         </FadeIn>
 

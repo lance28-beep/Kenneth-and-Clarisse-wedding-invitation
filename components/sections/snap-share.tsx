@@ -22,10 +22,9 @@ export function SnapShare() {
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
   const driveLink = siteConfig.snapShare?.googleDriveLink || "https://drive.google.com/drive/folders/1kOrf64ay6vx0pIeIjavvWp31B8nFWowQ?usp=sharing"
-  const hashtags = [
-    "#KennethAndClarisse2026",
-    "#KennethAndClarisseTogether",
-    "#KennethAndClarisseForever"
+  const hashtags = siteConfig.snapShare?.hashtags || [
+    "#UnKENditionalLoveWithMACY",
+    "#ALifetimeKENnectionWithMACY"
   ]
   const allHashtagsText = hashtags.join(" ")
   const groomNickname = siteConfig.couple.groomNickname

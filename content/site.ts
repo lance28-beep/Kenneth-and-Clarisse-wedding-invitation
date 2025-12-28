@@ -1,13 +1,13 @@
 export const siteConfig = {
   couple: {
     bride: "Clarisse Mae Arnan Reyes",
-    brideNickname: "Clarisse",
+    brideNickname: "Macy",
     groom: "Kenneth Erwin Brucelo Jose",
     groomNickname: "Kenneth",
   },
   wedding: {
     date: "January 28, 2026",
-    time: "9:00 AM",
+    time: "9:30 AM",
     venue: "St. Benedict Parish / Infinity Tagaytay Events Place",
     tagline: "are getting married!",
     theme: "Purple & Sage Motif",
@@ -23,7 +23,7 @@ export const siteConfig = {
     venue: "St. Benedict Parish",
     date: "January 28, 2026",
     day: "Wednesday",
-    time: "9:00 AM",
+    time: "9:30 AM",
     entourageTime: "8:30 AM",
     guestsTime: "8:30 AM",
   },
@@ -68,7 +68,10 @@ Without planning it, they fell in love. What started as two block mates became t
   },
   snapShare: {
     googleDriveLink: "https://drive.google.com/drive/folders/1gFI7Q-1J85w2gwOQ-Ugkakeei2poqBM8?usp=sharing",
-    hashtag: "#KennethAndClarisse2026",
+    hashtags: [
+      "#UnKENditionalLoveWithMACY",
+      "#ALifetimeKENnectionWithMACY"
+    ],
     instructions: "Please scan this QR Code, create a folder with your name and upload the photos and videos you have taken during our wedding reception. We are delighted to see your snaps too!",
   },
 }

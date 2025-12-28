@@ -104,7 +104,7 @@ export function Navbar() {
                   color: 'rgb(74, 93, 78)',
                 }}
               >
-                K | C
+                K | M
               </div>
             </div>
             
