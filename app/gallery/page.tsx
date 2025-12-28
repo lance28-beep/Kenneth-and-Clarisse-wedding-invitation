@@ -74,7 +74,7 @@ export default async function GalleryPage() {
             letterSpacing: "0.02em",
             textShadow: "0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06)"
           }}>
-            Every photograph tells a story of Catherine & Mark's journey to forever
+            Every photograph tells a story of {groomNickname} & {brideNickname}'s journey to forever
           </p>
           
           {/* Decorative element below subtitle */}
