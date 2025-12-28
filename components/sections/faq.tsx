@@ -46,7 +46,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Is there a dress code?",
     answer:
-      `Yes! We kindly request our guests to dress in formal attire matching our Purple & Sage motif. Please see the Attire section in Details for specific guidelines:\n\nPrincipal Sponsors:\n• Male: ${siteConfig.dressCode.sponsors.male}\n• Female: ${siteConfig.dressCode.sponsors.female}\n\nGuests:\n• Gents: ${siteConfig.dressCode.guests.gents}\n• Ladies: ${siteConfig.dressCode.guests.ladies}`,
+      `Yes! We kindly request our guests to dress in semi-formal attire. Please see the Attire section in Details for specific guidelines:\n\nGuests:\n• Gentlemen: Long sleeves polo and slacks\n• Ladies: Floor length dress`,
   },
   {
     question: "Will there be assigned seating?",
